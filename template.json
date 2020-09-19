@@ -1,33 +1,82 @@
 {
-    "Actor": {
-        "types": [
-            "character", "npc", "summon"
-        ],
-        "templates": {
-           
-    },
-    "Item": {
-        "types": [
-            "weapon",
-            "spell"
-        ],
-        "templates": {
-            "rarity": {
-                "rarity": "Common",
-                "price": 20
-            }
+  "Actor": {
+    "types": [
+        "character", "npc", "summon"
+    ],
+    "templates": {
+      "common": {
+        "abilities": {
+          "str": {
+            "value": 10
+          },
+          "dex": {
+            "value": 10
+          },
+          "con": {
+            "value": 10
+          },
+          "int": {
+            "value": 10
+          },
+          "wis": {
+            "value": 10
+          },
+          "cha": {
+            "value": 10
+          }
         },
-        "weapon": {
-            "templates": [
-                "rarity"
-            ],
-            "damage": 5
+        "saving_throws": {
+          "fort": {
+            "value": 0
+          },
+          "ref": {
+            "value": 0
+          },
+          "will": {
+            "value": 0
+          }
         },
-        "spell": {
-            "templates": [
-                "rarity"
-            ],
-            "cost": 2
+        "resources": {},
+        "attributes": {
+          "level": 1,
+          "characterDC": 10,
+          "encumbrance": {
+            "threshold": 5,
+            "maximum": 10
+          },
+          "ac": {
+            "value": 10
+          },
+          "hitpoints": {
+            "value": 10,
+            "min": 0,
+            "max": 10,
+            "temp": 0,
+            "tempmax": 0
+          },
+          "initative": {
+            "value": 0,
+            "bonus": 0
+          },
+          "carriedWeight": 0,
+          "maximum_spell_strain": 1
+        },
+        "details": {
+          "biography": {
+            "value": "",
+            "public": ""
+          }
+        },
+        "traits": {
+          "size": "medium"
+        },
+        "currency": {
+          "pp": 0,
+          "gp": 0,
+          "sp": 0,
+          "cp": 0
         }
+      },
     }
+  }
 }
