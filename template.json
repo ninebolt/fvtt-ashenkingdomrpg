@@ -1,0 +1,33 @@
+{
+    "Actor": {
+        "types": [
+            "character", "npc", "summon"
+        ],
+        "templates": {
+           
+    },
+    "Item": {
+        "types": [
+            "weapon",
+            "spell"
+        ],
+        "templates": {
+            "rarity": {
+                "rarity": "Common",
+                "price": 20
+            }
+        },
+        "weapon": {
+            "templates": [
+                "rarity"
+            ],
+            "damage": 5
+        },
+        "spell": {
+            "templates": [
+                "rarity"
+            ],
+            "cost": 2
+        }
+    }
+}
