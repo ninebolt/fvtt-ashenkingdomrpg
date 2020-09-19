@@ -1,10 +1,13 @@
 {
   "Actor": {
-    "types": [
-        "character", "npc", "summon"
-    ],
+    "types": ["character"],
     "templates": {
-      "common": {
+      "base": {
+        "hp": {
+          "value": 0,
+          "min": 0,
+          "max": 10
+        },
         "abilities": {
           "str": {
             "value": 10
@@ -24,59 +27,27 @@
           "cha": {
             "value": 10
           }
-        },
-        "saving_throws": {
-          "fort": {
-            "value": 0
-          },
-          "ref": {
-            "value": 0
-          },
-          "will": {
-            "value": 0
-          }
-        },
-        "resources": {},
-        "attributes": {
-          "level": 1,
-          "characterDC": 10,
-          "encumbrance": {
-            "threshold": 5,
-            "maximum": 10
-          },
-          "ac": {
-            "value": 10
-          },
-          "hitpoints": {
-            "value": 10,
-            "min": 0,
-            "max": 10,
-            "temp": 0,
-            "tempmax": 0
-          },
-          "initative": {
-            "value": 0,
-            "bonus": 0
-          },
-          "carriedWeight": 0,
-          "maximum_spell_strain": 1
-        },
-        "details": {
-          "biography": {
-            "value": "",
-            "public": ""
-          }
-        },
-        "traits": {
-          "size": "medium"
-        },
-        "currency": {
-          "pp": 0,
-          "gp": 0,
-          "sp": 0,
-          "cp": 0
         }
-      },
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "level": {
+        "value": 1
+      }
+    }
+  },
+  "Item": {
+    "types": ["item"],
+    "templates": {
+      "base": {
+        "description": ""
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "quantity": 1,
+      "weight": "L"
     }
   }
 }

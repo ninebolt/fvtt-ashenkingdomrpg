@@ -6,7 +6,7 @@
   "templateVersion": 2,
   "author": "Ash Bhatnagar",
   "scripts": [],
-  "esmodules": [],
+  "esmodules": ["main.js"],
   "styles": [],
   "packs": [
     {
@@ -16,7 +16,7 @@
       "module": "AKRPG",
       "path": "packs/races.db",
       "entity": "Item"
-    },
+    }
   ],
   "languages": [
     {
@@ -31,7 +31,7 @@
   "gridUnits": "ft",
   "primaryTokenAttribute": "resources.health",
   "secondaryTokenAttribute": "resources.power",
-  "url": "https://your/hosted/system/repo/",
-  "manifest": "https://your/hosted/system/repo/system.json",
-  "download": "https://your/packaged/download/archive.zip"
+  "url": "https://github.com/ninebolt/fvtt-ashenkingdomrpg",
+  "manifest": "https://raw.githubusercontent.com/ninebolt/fvtt-ashenkingdomrpg/master/system.json",
+  "download": "https://github.com/ninebolt/fvtt-ashenkingdomrpg/archive/master.zip"
 }
