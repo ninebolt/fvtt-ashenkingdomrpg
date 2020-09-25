@@ -27,7 +27,7 @@ export class AKRPGActor extends Actor {
      * Computes the ability score modifiers from base ability scores.
      */
     _calculateAbilityScoreModifiers() {
-        for (let ability of Object.values(this.data.data.abilities)) {
+        for (let ability of Object.values(this.data.data.abilityScores)) {
             if (ability.value) ability.modifier = Math.floor((ability.value - 10) / 2);
             console.log('ABILITY', ability);
         }
@@ -41,7 +41,11 @@ export class AKRPGActor extends Actor {
             if (!savingThrow.base) savingThrow.base = 0;
             if (!savingThrow.miscMod) savingThrow.miscMod = 0;
 
-            savingThrow.value = savingThrow.base + this.data.data.abilities[savingThrow.baseAbility].mod + savingThrow.miscMod;
+            console.log('A', savingThrow.base);
+            console.log('B', this.data.data.abilityScores[savingThrow.baseAbility].modifier);
+            console.log('C', savingThrow.miscMod);
+
+            savingThrow.value = savingThrow.base + this.data.data.abilityScores[savingThrow.baseAbility].modifier + savingThrow.miscMod;
             console.log('SAVING THROW', savingThrow);
         }
     }
