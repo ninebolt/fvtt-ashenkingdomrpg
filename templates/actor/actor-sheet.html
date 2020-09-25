@@ -22,7 +22,7 @@
         <div class="attributes">
             <ul>
                 {{#each data.abilities as |ability id|}}
-                <li>{{numberFormat ability.mod decimals=0 sign=true}}</li>
+                <li>{{ability.label}} {{numberFormat ability.mod decimals=0 sign=true}}</li>
                 {{/each}}
             </ul>
         </div>

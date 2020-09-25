@@ -3,12 +3,7 @@
     "types": ["character"],
     "templates": {
       "base": {
-        "hp": {
-          "value": 0,
-          "min": 0,
-          "max": 10
-        },
-        "abilities": {
+        "abilityScores": {
           "str": {
             "value": 10,
             "label": "Strength"
@@ -33,33 +28,81 @@
             "value": 10,
             "label": "Charisma"
           }
-        }
-      },
-      "savingThrows": {
-        "fortitude": {
-          "base": 0,
-          "baseAbility": "con",
-          "miscMod": 0,
-          "label": "Fortitude"
         },
-        "reflex": {
-          "base": 0,
-          "baseAbility": "dex",
-          "miscMod": 0,
-          "label": "Reflex"
+        "hitPoints": {
+          "maximum": 0,
+          "current": 0,
+          "temp": 0
         },
-        "will": {
-          "base": 0,
-          "baseAbility": "wis",
-          "miscMod": 0,
-          "label": "Will"
-        }
-      },
-      "attributes": {
-        "initative": {
-          "value": 0,
-          "bonus": 0
-        }
+        "hitDice": {
+          "maximum": 0,
+          "current": 0
+        },
+        "deathSaves": 0,
+        "savingThrows": {
+          "fortitude": {
+            "base": 0,
+            "baseAbility": "con",
+            "miscMod": 0,
+            "label": "Fortitude"
+          },
+          "reflex": {
+            "base": 0,
+            "baseAbility": "dex",
+            "miscMod": 0,
+            "label": "Reflex"
+          },
+          "will": {
+            "base": 0,
+            "baseAbility": "wis",
+            "miscMod": 0,
+            "label": "Will"
+          }
+        },
+        "attributes": {
+          "name": "",
+          "class": "",
+          "level": 1,
+          "background": "",
+          "race": "human",
+          "alignment": "",
+          "characterDC": 10,
+          "signatureAbility": "",
+          "armorClass": 0,
+          "speed": "30 feet",
+          "baseAttackBonus": 0,
+          "initiative": {
+            "value": 0,
+            "additionalModifier": 0
+          }
+        },
+        "strain": {
+          "maximum": 0,
+          "current": 0,
+          "additionalModifier": 0
+        },
+        "proficiencies": {
+          "weaponProficiencies": [],
+          "armorProficiencies": [],
+          "languages": [],
+          "other": []
+        },
+        "weapons": [],
+        "skills": [],
+        "equipment": {
+          "carryingCapacity": {
+            "current": 0,
+            "encumbered": 5,
+            "maximum": 10,
+            "additionalModifier": 0
+          },
+          "currency": {
+            "copper": 0,
+            "silver": 0,
+            "gold": 0,
+            "platinum": 0
+          },
+        },
       }
     },
     "character": {
