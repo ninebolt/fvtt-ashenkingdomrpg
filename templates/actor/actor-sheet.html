@@ -21,8 +21,8 @@
     <section class="sheet-body">
         <div class="attributes">
             <ul>
-                {{#each data.abilities as |ability id|}}
-                <li>{{ability.label}} {{numberFormat ability.modifier decimals=0 sign=true}}</li>
+                {{#each data.abilityScores as |ability id|}}
+                <li>{{ability.label}} <input name="data.abilityScores.{{id}}.value" value="{{ability.value}}" placeholder="10"/>{{numberFormat ability.modifier decimals=0 sign=true}}</li>
                 {{/each}}
             </ul>
         </div>
