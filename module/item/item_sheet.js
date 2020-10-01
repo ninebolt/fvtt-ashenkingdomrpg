@@ -2,8 +2,7 @@ export class AKRPGItemSheet extends ItemSheet {
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["boilerplate", "sheet", "item"],
-            template: "systems/AKRPG/templates/item/item-sheet.html",
+            classes: ["akrpg", "boilerplate", "sheet", "item"],
             width: 600,
             height: 600,
             tabs: [{ navSelector: ".sheet-tabs", contentSelector: ".sheet-body", initial: "description" }]
@@ -11,11 +10,19 @@ export class AKRPGItemSheet extends ItemSheet {
     }
 
     /** @Override */
+    get template() {
+      const path = "systems/AKRPG/templates/items/";
+      return `${path}/${this.item.data.type}.html`;
+    }
+
+    /** @Override */
     getData() {
         const data = super.getData();
-        console.log("Item Sheet Data", data);
+        data.labels = this.item.labels;
 
-        data.dtypes = ['String', 'Number', 'Boolean'];
+        data.config = CONFIG.AKRPG;
+
+        console.log("Item Sheet Data", data);
         return data;
     }
 }

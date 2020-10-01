@@ -2,7 +2,7 @@ export class AKRPGActorSheet extends ActorSheet {
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
-            classes: ["boilerplate", "sheet", "actor"],
+            classes: ["akrpg", "boilerplate", "sheet", "actor"],
             template: "systems/AKRPG/templates/actor/actor-sheet.html",
             width: 600,
             height: 600,
