@@ -35,8 +35,8 @@
           "temp": 0
         },
         "hitDice": {
-          "maximum": 0,
-          "current": 0
+          "maximum": 1,
+          "current": 1
         },
         "deathSaves": 0,
         "savingThrows": {
@@ -65,9 +65,12 @@
           "background": "",
           "race": "human",
           "alignment": "",
-          "characterDC": 10,
-          "signatureAbility": "",
-          "armorClass": 0,
+          "characterDC": {
+            "value": 10,
+            "additionalModifier": 0
+          },
+          "signatureAbility": "wis",
+          "armorClass": 10,
           "speed": "30 feet",
           "baseAttackBonus": 0,
           "initiative": {

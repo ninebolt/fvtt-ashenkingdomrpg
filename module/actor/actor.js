@@ -1,4 +1,4 @@
-export class AKRPGActor extends Actor {
+export default class AKRPGActor extends Actor {
 
     /**
      * @override
@@ -26,6 +26,7 @@ export class AKRPGActor extends Actor {
         this._calculateSkillTotals();
         this._calculateCharacterDC();
         this._calculateMaximumSpellStrain();
+        this._calculateInitiative();
     }
 
     /**
@@ -64,7 +65,8 @@ export class AKRPGActor extends Actor {
      */
     _calculateCharacterDC() {
         if (!this.data.data.attributes.signatureAbility) this.data.data.attributes.signatureAbility = 'wis';
-        this.data.data.attributes.characterDC = 10 + Math.floor(this.data.data.attributes.level / 2) + this.data.data.abilityScores[this.data.data.attributes.signatureAbility].modifier;
+        if (!this.data.data.attributes.characterDC.additionalModifier) this.data.data.attributes.characterDC.additionalModifier = 0;
+        this.data.data.attributes.characterDC.value = 10 + Math.floor(this.data.data.attributes.level / 2) + this.data.data.abilityScores[this.data.data.attributes.signatureAbility].modifier + this.data.data.attributes.characterDC.additionalModifier;
     }
 
     /**
@@ -73,5 +75,22 @@ export class AKRPGActor extends Actor {
     _calculateMaximumSpellStrain() {
         if (!this.data.data.attributes.signatureAbility) this.data.data.attributes.signatureAbility = 'wis';
         this.data.data.strain.maximum = 1 + this.data.data.attributes.level;
+    }
+
+    /**s
+     * Computes character initiative
+     */
+    _calculateInitiative() {
+        if (!this.data.data.attributes.initiative.additionalModifier) this.data.data.attributes.initiative.additionalModifier = 0;
+        this.data.data.attributes.initiative.value = this.data.data.abilityScores.dex.modifier + this.data.data.attributes.initiative.additionalModifier;
+    }
+
+    /**
+     * Sets the character's signature ability
+     */
+    setSignatureAbility(ability) {
+        const abilityMap = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
+        if (!abilityMap.includes(ability)) return;
+        this.data.data.attributes.signatureAbility = ability;
     }
 }

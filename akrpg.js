@@ -6,7 +6,7 @@ import { AKRPGActor } from './module/actor/actor.js';
 import { AKRPGItem } from './module/item/item.js';
 
 // Import Sheets
-import { AKRPGActorSheet } from './module/actor/actor_sheet.js';
+import { AKRPGActorSheetCharacter } from './module/actor/actor_sheet.js';
 import { AKRPGItemSheet } from './module/item/item_sheet.js';
 
 Hooks.once('init', async function () {
@@ -14,7 +14,7 @@ Hooks.once('init', async function () {
 
   game.akrpg = {
     application: {
-      AKRPGActorSheet,
+      AKRPGActorSheetCharacter,
       AKRPGItemSheet
     },
     entities: {
@@ -27,7 +27,7 @@ Hooks.once('init', async function () {
   CONFIG.AKRPG = AKRPG;
 
   Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('akrpg', AKRPGActorSheet, { types: ['character'], makeDefault: true });
+  Actors.registerSheet('akrpg', AKRPGActorSheetCharacter, { types: ['character'], makeDefault: true });
   Items.unregisterSheet('core', ItemSheet);
   Items.registerSheet('akrpg', AKRPGItemSheet, {makeDefault: true});
 
