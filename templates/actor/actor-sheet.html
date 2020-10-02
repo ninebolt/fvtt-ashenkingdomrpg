@@ -1,37 +1,106 @@
 <form class="{{cssClass}} flexcol" autocomplete="off">
 
     {{!-- Sheet Header --}}
-    <header class="sheet-header">
+    <header class="sheet-header flexrow">
         {{!-- Header stuff goes here --}}
-        <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100" />
-        <div class="header-fields">
-            <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
-            <div class="resources grid grid-2col">{{!-- resources here --}}</div>
-            <div class="abilities grid grid-3col">{{!-- abilities here --}}</div>
+        <img class="char-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" />
+        <div class="header-fields flexcol flex3">
+            <div class="char-basics flexrow">
+
+                <h1 class="char-name flex3"><input name="name" type="text" value="{{actor.name}}" placeholder="Name" /></h1>
+                <aside class="char-level-container">
+                    <div class="char-level">
+                        <label>Level</label>
+                        <input type="text" name="data.attributes.level" value="{{data.attributes.level}}" placeholder="0"/>
+                    </div>
+                </aside>
+            </div>
+            <ul class="char-summary flexrow">
+                <li class="char-race"><input type="text" name="data.attributes.race" value="{{data.attributes.race}}" placeholder="Race" /></li>
+                <li class="char-background"><input type="text" name="data.attributes.background" value="{{data.attributes.background}}" placeholder="Background" /></li>
+                <li class="char-class"><input type="text" name="data.attributes.class" value="{{data.attributes.class}}" placeholder="Class" /></li>
+            </ul>
         </div>
     </header>
 
-    {{!-- Sheet Tab Navigation --}}
-    <nav class="sheet-tabs tabs" data-group="primary">
-        <a class="item" data-tab="description">Description</a>
-        <a class="item" data-tab="items">Items</a>
+    <section class="attributes-container">
+        <ul class="attributes flexrow">
+            <li class="attribute health">
+                <h4 class="attribute-name box-title">Hit Points</h4>
+                <div class="attribute-value multiple">
+                    <input type="text" name="data.hitPoints.current" value="{{data.hitPoints.current}}" placeholder="10" />
+                    <span class="sep"> / </span>
+                    <input type="text" name="data.hitPoints.maximum" value="{{data.hitPoints.maximum}}" placeholder="10" />
+                </div>
+                <footer class="attribute-footer">
+                    <span>Temp HP</span>
+                    <input type="text" name="data.hitPoints.temp" value="{{data.hitPoints.temp}}" placeholder="Temp"/>
+                </footer>
+            </li>
+            <li class="attribute armor-class">
+                <h4 class="attribute-name box-title">Armor Class</h4>
+                <div class="attribute-value">
+                    <input type="text" name="data.attributes.armorClass" value="{{data.attributes.armorClass}}" placeholder="AC" />
+                </div>
+            </li>
+            <li class="attribute speed">
+                <h4 class="attribute-name box-title">Speed</h4>
+                <div class="attribute-value">
+                    <input type="text" name="data.attributes.speed" value="{{data.attributes.speed}}" placeholder="Speed" />
+                </div>
+            </li>
+            <li class="attribute initiative">
+                <h4 class="attribute-name box-title">Initiative</h4>
+                <div class="attribute-value">
+                    <span>{{numberFormat data.attributes.initiative.value decimals=0 sign=true}}</span>
+                </div>
+                <footer class="attribute-footer">
+                    <span>Modifier</span>
+                    <input type="text" name="data.attributes.initiative.additionalModifier" value="{{numberFormat data.attributes.initiative.additionalModifier decimals=0 sign=true}}" placeholder="0" />
+                </footer>
+            </li>
+            <li class="attribute base-attack-bonus">
+                <h4 class="attribute-name box-title">B.A.B.</h4>
+                <div class="attribute-value">
+                    <input type="text" name="data.attributes.baseAttackBonus" value="{{numberFormat data.attributes.baseAttackBonus decimals=0 sign=true}}" />
+                </div>
+            </li>
+            <li class="attribute character-dc">
+                <h4 class="attribute-name box-title">Character DC</h4>
+                <div class="attribute-value">
+                    <span>{{numberFormat data.attributes.characterDC.value decimals=0 sign=true}}</span>
+                </div>
+                <footer class="attribute-footer">
+                    <span>Modifier</span>
+                    <input type="text" name="data.attributes.characterDC.additionalModifier"
+                        value="{{numberFormat data.attributes.characterDC.additionalModifier decimals=0 sign=true}}" placeholder="0" />
+                </footer>
+            </li>
+        </ul>
+    </section>
+
+    <nav class="sheet-navigation tabs">
+        <a class="item active" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="inventory">Inventory</a>
+        <a class="item" data-tab="spellbook">Spells</a>
     </nav>
 
-    {{!-- Sheet Body --}}
     <section class="sheet-body">
-        <div class="attributes">
-            <ul>
+        <div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
+            <ul class="ability-scores flexrow">
                 {{#each data.abilityScores as |ability id|}}
-                <li>{{ability.label}} <input name="data.abilityScores.{{id}}.value" value="{{ability.value}}" placeholder="10"/>{{numberFormat ability.modifier decimals=0 sign=true}}</li>
+                    <li class="ability" data-ability="{{id}}">
+                        <h4 class="ability-name box-title rollable">{{ability.label}}</h4>
+                        <input class="ability-score" name="data.abilityScores.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10" />
+                        <div class="ability-modifiers flexrow">
+                            <div class="ability-signature-selector" data-abilityScore="{{id}}"></div>
+                            <span class="ability-mod" title="Modifier">{{numberFormat ability.modifier decimals=0 sign=true}}</span>
+                        </div>
+                    </li>
                 {{/each}}
             </ul>
         </div>
-        <div class="saving-throws">
-            <ul>
-                {{#each data.savingThrows as |savingThrow id|}}
-                <li>{{savingThrow.label}} {{numberFormat savingThrow.value}}</li>
-                {{/each}}
-            </ul>
-        </div>
+
     </section>
+    
 </form>

@@ -1,5 +1,5 @@
-import { AKRPGActor } from './module/actor/actor.js';
-import { AKRPGActorSheet } from './module/actor/actor_sheet.js';
+import AKRPGActor from './module/actor/actor.js';
+import AKRPGActorSheetCharacter from './module/actor/sheets/character.js';
 
 Hooks.once('init', async function () {
   console.log('AKRPG | System Loading');
@@ -11,7 +11,7 @@ Hooks.once('init', async function () {
   CONFIG.Actor.entityClass = AKRPGActor;
   
   Actors.unregisterSheet('core', ActorSheet);
-  Actors.registerSheet('akrpg', AKRPGActorSheet, { types: ['character'], makeDefault: true });
+  Actors.registerSheet('akrpg', AKRPGActorSheetCharacter, { types: ['character'], makeDefault: true });
 
   /**
    * Set an initiative formula for the system
