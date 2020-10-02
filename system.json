@@ -16,6 +16,14 @@
       "module": "AKRPG",
       "path": "packs/races.db",
       "entity": "Item"
+    },
+    {
+      "name": "spells",
+      "label": "Spells",
+      "system": "AKRPG",
+      "module": "AKRPG",
+      "path": "packs/spells.db",
+      "entity": "Item"
     }
   ],
   "languages": [
