@@ -3,6 +3,8 @@ import AKRPGActor from '../actor.js';
 
 export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
 
+    datam = 'hi';
+
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             classes: ["akrpg", "sheet", "actor"],
@@ -19,9 +21,14 @@ export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
         return data;
     }
 
+    get signatureAbility() {
+        console.log('GLOP', this.getData().data.attributes.signatureAbility);
+        return this.getData().data.attributes.signatureAbility;
+    }
+
     /**
      * Event Listeners
-     */
+     */ 
 
     activateListeners(html) {
         super.activateListeners(html);

@@ -1,4 +1,4 @@
-export class AKRPGSpell extends Item {
+export default class AKRPGSpell extends Item {
 
     /**
      * @override

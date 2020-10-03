@@ -19,6 +19,16 @@
                 <li class="char-race"><input type="text" name="data.attributes.race" value="{{data.attributes.race}}" placeholder="Race" /></li>
                 <li class="char-background"><input type="text" name="data.attributes.background" value="{{data.attributes.background}}" placeholder="Background" /></li>
                 <li class="char-class"><input type="text" name="data.attributes.class" value="{{data.attributes.class}}" placeholder="Class" /></li>
+                <li class="char-signatureAbility">
+                    <span>Sig. Ability</span>
+                    <select name="data.attributes.signatureAbility">
+                        {{#select data.attributes.signatureAbility}}
+                        {{#each data.abilityScores as |ability id|}}
+                        <option value="{{id}}">{{ability.label}}</option>
+                        {{/each}}
+                        {{/select}}
+                    </select>
+                </li>
             </ul>
         </div>
     </header>
@@ -93,14 +103,29 @@
                         <h4 class="ability-name box-title rollable">{{ability.label}}</h4>
                         <input class="ability-score" name="data.abilityScores.{{id}}.value" type="text" value="{{ability.value}}" data-dtype="Number" placeholder="10" />
                         <div class="ability-modifiers flexrow">
-                            <div class="ability-signature-selector" data-abilityScore="{{id}}"></div>
                             <span class="ability-mod" title="Modifier">{{numberFormat ability.modifier decimals=0 sign=true}}</span>
                         </div>
                     </li>
                 {{/each}}
             </ul>
-        </div>
 
+            {{!-- Skills --}}
+            <ul class="skills-list">
+                {{#each data.skills as |skill s|}}
+                <li class="skill flexrow {{#if skill.value}}proficient{{/if}}" data-skill="{{s}}">
+                    <label><input type="radio" name="data.skills.{{s}}.proficiency" value="unknown" data-dtype="String" />U</label>
+                    <label></label><input type="radio" name="data.skills.{{s}}.proficiency" value="known" data-dtype="String" />K</label>
+                    <label></label><input type="radio" name="data.skills.{{s}}.proficiency" value="trained" data-dtype="String" />T</label>
+                    <label></label><input type="radio" name="data.skills.{{s}}.proficiency" value="expert" data-dtype="String" />E</label>
+                    <h4 class="skill-name rollable">{{skill.label}}</h4>
+                    <span class="skill-ability">{{skill.baseAbility}}</span>
+                    <input type="text" name="data.skills.{{s}}.additionalModifier" value="{{numberFormat skill.additionalModifier decimals=0 sign=true}}" />
+                    <span class="skill-mod">{{numberFormat skill.value decimals=0 sign=true}}</span>
+                </li>
+                {{/each}}
+            </ul>
+
+        </div>
     </section>
     
 </form>

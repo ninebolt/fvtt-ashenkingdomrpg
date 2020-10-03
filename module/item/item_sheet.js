@@ -1,4 +1,4 @@
-export class AKRPGItemSheet extends ItemSheet {
+export default class AKRPGItemSheet extends ItemSheet {
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
@@ -11,8 +11,8 @@ export class AKRPGItemSheet extends ItemSheet {
 
     /** @Override */
     get template() {
-      const path = "systems/AKRPG/templates/items/";
-      return `${path}/${this.item.data.type}.html`;
+      const path = "systems/AKRPG/templates/item/";
+      return `${path}${this.item.data.type}.html`;
     }
 
     /** @Override */
