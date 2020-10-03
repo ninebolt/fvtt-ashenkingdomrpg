@@ -17,6 +17,18 @@ export default class AKRPGActor extends Actor {
         console.log('ACTOR FLAGS', this.flags);
     }
 
+    prepareDerivedData() {
+        console.log('DERIVING!');
+    }
+
+    /**
+     * @override
+     * Updates the entity data
+     */
+    async update(data, options={}) {
+        return super.update(data, options);
+    }
+
     /**
      * Prepares data for actor type 'character'
      */
@@ -56,7 +68,7 @@ export default class AKRPGActor extends Actor {
         let proficiencyMap = { 'unknown': -4, 'known': 0, 'trained': 3, 'expert': 6 };
         for (let skill of Object.values(this.data.data.skills)) {
             if (!skill.additionalModifier) skill.additionalModifier = 0;
-            skill.value = proficiencyMap[skill.proficiency] + this.data.data.abilityScores[skill.baseAbility].modifier + skill.additionalModifier;
+            skill.value = +proficiencyMap[skill.proficiency] + +this.data.data.abilityScores[skill.baseAbility].modifier + +skill.additionalModifier;
         }
     }
 
@@ -66,7 +78,7 @@ export default class AKRPGActor extends Actor {
     _calculateCharacterDC() {
         if (!this.data.data.attributes.signatureAbility) this.data.data.attributes.signatureAbility = 'wis';
         if (!this.data.data.attributes.characterDC.additionalModifier) this.data.data.attributes.characterDC.additionalModifier = 0;
-        this.data.data.attributes.characterDC.value = 10 + Math.floor(this.data.data.attributes.level / 2) + this.data.data.abilityScores[this.data.data.attributes.signatureAbility].modifier + this.data.data.attributes.characterDC.additionalModifier;
+        this.data.data.attributes.characterDC.value = 10 + Math.floor(+this.data.data.attributes.level / 2) + this.data.data.abilityScores[this.data.data.attributes.signatureAbility].modifier + +this.data.data.attributes.characterDC.additionalModifier;
     }
 
     /**
@@ -77,7 +89,7 @@ export default class AKRPGActor extends Actor {
         this.data.data.strain.maximum = 1 + this.data.data.attributes.level;
     }
 
-    /**s
+    /**
      * Computes character initiative
      */
     _calculateInitiative() {
@@ -85,12 +97,4 @@ export default class AKRPGActor extends Actor {
         this.data.data.attributes.initiative.value = this.data.data.abilityScores.dex.modifier + this.data.data.attributes.initiative.additionalModifier;
     }
 
-    /**
-     * Sets the character's signature ability
-     */
-    setSignatureAbility(ability) {
-        const abilityMap = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
-        if (!abilityMap.includes(ability)) return;
-        this.data.data.attributes.signatureAbility = ability;
-    }
 }

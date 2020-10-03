@@ -1,29 +1,28 @@
 import AKRPGActorSheet  from './base.js';
-import AKRPGActor from '../actor.js';
 
 export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
-
-    datam = 'hi';
 
     static get defaultOptions() {
         return mergeObject(super.defaultOptions, {
             classes: ["akrpg", "sheet", "actor"],
             width: 720,
-            height: 680,
+            height: 700,
         });
     }
 
     getData() {
         const data = super.getData();
-        console.log("Actor Data", data);
 
         data.dtypes = ['String', 'Number', 'Boolean'];
         return data;
     }
 
-    get signatureAbility() {
-        console.log('GLOP', this.getData().data.attributes.signatureAbility);
-        return this.getData().data.attributes.signatureAbility;
+    /**
+     * @override
+     * Submits form changes
+     */
+    _onSubmit(event) {
+        return super._onSubmit(event);
     }
 
     /**
@@ -33,12 +32,18 @@ export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
     activateListeners(html) {
         super.activateListeners(html);
         
-        // Selecting Signature Ability
-        html.find('.ability-signature-selector').click(this._selectSignatureAbility.bind(this));
+        // Updating Skill Proficiency
+        html.find('.proficiency-box').click(this._updateSkillProficiency.bind(this));
     }
 
-    _selectSignatureAbility(event) {
+    _updateSkillProficiency(event) {
         event.preventDefault();
-        this.actor.setSignatureAbility(event.toElement.getAttribute('data-abilityScore'));
+        const proficiency = event.currentTarget.getAttribute('data-prof');
+        const field = $(event.currentTarget).siblings('input[type="hidden"]');
+        field.val(proficiency);
+
+        // The trick is to use the formdata lifecycle hooks but adjusting the value of the hidden input
+        this._onSubmit(event);
     }
+
 }

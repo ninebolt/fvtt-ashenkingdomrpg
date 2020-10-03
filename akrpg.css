@@ -403,7 +403,7 @@
     margin: 2px 0;
     padding: 0;
     border-right: 2px groove #eeede0;
-    line-height: 25;
+    line-height: 25px;
     color: #4b4a44;
     display: flex;
     align-items: center;
@@ -415,6 +415,10 @@
 
 .akrpg ul.char-summary li input {
     display: block;
+}
+
+.akrpg ul.char-summary li span {
+  line-height: 12px;
 }
 
 /**
@@ -461,7 +465,7 @@
     justify-content: center;
     align-items: center;
     height: 30px;
-    line-height: 30;
+    line-height: 30px;
     font-family: "Modesto Condensed", "Palatino Linotype", serif;
     font-size: 20px;
     font-weight: 700;
@@ -548,11 +552,66 @@
     border-left: 2px groove #eeede0;
 }
 
-.akrpg .ability-scores .ability .ability-modifiers div.ability-signature-selector {
-    cursor: pointer;
-    border-right: 2px groove #eeede0;
+/**
+* Skills
+*/
+.akrpg ul.skills-list {
+  list-style: none;
 }
 
-.akrpg .ability-scores .ability .ability-modifiers div.ability-signature-selector.selected {
-    background-color: #47191a;
+.akrpg li.skill {
+  align-items: center;
+  display: flex;
+  flex-wrap: nowrap;
+  margin-bottom: 2px;
+}
+
+.akrpg .proficiency-container {
+  display: flex;
+  flex-wrap: nowrap;
+  margin-right: 2px;
+}
+
+.akrpg .proficiency-container .proficiency-box {
+  cursor: pointer;
+  border: solid 1px grey;
+  border-right: none;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.akrpg .proficiency-container .proficiency-box:last-child {
+  border-right: groove 2px #eeede0;
+}
+
+.akrpg .proficiency-container .proficiency-box.unknown.proficiency-unknown,
+.akrpg .proficiency-container .proficiency-box.known.proficiency-known,
+.akrpg .proficiency-container .proficiency-box.trained.proficiency-trained,
+.akrpg .proficiency-container .proficiency-box.expert.proficiency-expert {
+  color: white;
+  background-color: gray;
+}
+
+.akrpg .skill .skill-name {
+  margin-bottom: 0;
+  font-weight: 700;
+  margin-right: 4px;
+  width: 120px;
+}
+
+.akrpg .skill .skill-ability {
+  width: 25px;
+}
+
+.akrpg .skill .skill-additional-modifier {
+  width: 25px;
+}
+
+.akrpg .skill .skill-total {
+  font-weight: 700;
+  width: 25px;
+  text-align: center;
 }
