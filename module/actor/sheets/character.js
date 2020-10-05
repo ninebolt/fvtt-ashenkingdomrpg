@@ -19,6 +19,38 @@ export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
 
     /**
      * @override
+     * When an item from the compendium is dropped onto the sheet
+     */
+    async _onDrop(event) {
+        console.log('dropped', event);
+        event.preventDefault();
+
+        let data;
+        try {
+            data = JSON.parse(event.dataTransfer.getData('text/plain'));
+        } catch (err) {
+            console.log('ERROR', err);
+            return false;
+        }
+
+        console.log('DATA', data);
+
+        if (!data) return false;
+
+        const allowed = Hooks.call('dropActorSheetData', this.actor, this, data);
+        console.log('Allowed', allowed);
+        if (allowed === false) return;
+
+        if (data.type === 'Item') {
+            console.log('ITEM TYPE');
+        }
+
+        super._onDrop(event);
+        
+    }
+
+    /**
+     * @override
      * Submits form changes
      */
     _onSubmit(event) {

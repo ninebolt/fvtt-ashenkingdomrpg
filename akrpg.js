@@ -1,6 +1,9 @@
 // Import config
 import { AKRPG } from './module/config.js'
 
+// Import modules
+import { preloadHandlebarsTemplates } from './module/templates.js';
+
 // Import Entities
 import AKRPGActor from './module/actor/actor.js';
 import AKRPGItem from './module/item/item.js';
@@ -8,6 +11,7 @@ import AKRPGItem from './module/item/item.js';
 // Import Sheets
 import AKRPGActorSheetCharacter from './module/actor/sheets/character.js';
 import AKRPGItemSheet from './module/item/item_sheet.js';
+
 
 Hooks.once('init', async function () {
   console.log('AKRPG | System Loading');
@@ -44,4 +48,7 @@ Hooks.once('init', async function () {
   Handlebars.registerHelper('ifEqual', function(val1, val2) {
     return (val1 === val2);
   });
+
+  /* Load Templates */
+  preloadHandlebarsTemplates();
 });

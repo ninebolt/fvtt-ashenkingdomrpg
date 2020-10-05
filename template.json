@@ -254,16 +254,30 @@
     },
     "character": {
       "templates": ["base"],
-      "level": {
-        "value": 1
+      "additionalResource1": {
+        "label": "Resource 1",
+        "value": 5,
+        "maximum": 5
+      },
+      "additionalResource2": {
+        "label": "Resource 2",
+        "value": 5,
+        "maximum": 5
       }
     }
   },
   "Item": {
-    "types": ["item", "spell"],
+    "types": ["weapon", "armor", "equipment", "spell"],
     "templates": {
-      "base": {
+      "itemDescription": {
         "description": ""
+      },
+      "physicalItem": {
+        "quantity": 1,
+        "bulk": "-",
+        "price": "0",
+        "rarity": "common",
+        "hands": 1
       },
       "action": {
         "ability": null,
@@ -283,13 +297,44 @@
         }
       }
     },
-    "item": {
-      "templates": ["base"],
-      "quantity": 1,
-      "weight": "L"
+    "weapon": {
+      "templates": ["itemDescription", "physicalItem", "action"],
+      "primaryWeaponType": "melee",
+      "secondaryWeaponType": "simple",
+      "range": {
+        "minimum": 5,
+        "maximum": 10,
+        "unit": "Feet"
+      },
+      "properties": {
+        "finesse": false,
+        "light": false,
+        "thrown": false,
+        "versatile": false,
+        "reach": false,
+        "heavy": false,
+        "reload": false
+      }
+    },
+    "armor": {
+      "templates": ["itemDescription", "physicalItem"],
+      "armorType": "light",
+      "baseAC": "11 + Dex modifier"
+    },
+    "shield": {
+      "templates": ["itemDescription", "physicalItem"],
+      "shieldType": "wooden",
+      "acBonus": "+1",
+      "properties": {
+        "light": false,
+        "heavy": false
+      }
+    },
+    "equipment": {
+      "template": ["itemDescription", "physicalItem"]
     },
     "spell": {
-      "templates": ["base", "action"],
+      "templates": ["itemDescription", "action"],
       "arcanumCost": 1,
       "area": "",
       "castTime": "Action",

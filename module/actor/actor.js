@@ -97,4 +97,11 @@ export default class AKRPGActor extends Actor {
         this.data.data.attributes.initiative.value = this.data.data.abilityScores.dex.modifier + this.data.data.attributes.initiative.additionalModifier;
     }
 
+    /**
+     * @override
+     */
+    async _onDropItemCreate(itemData) {
+        return this.actor.createEmbeddedEntity('OwnedItem', itemData);
+    }
+
 }

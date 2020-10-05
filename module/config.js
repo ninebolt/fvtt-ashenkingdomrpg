@@ -6,12 +6,12 @@ export const AKRPG = {};
  * @type {Object}
  */
 AKRPG.abilities = {
-  "str": "AKRPG.AbilityStr",
-  "dex": "AKRPG.AbilityDex",
-  "con": "AKRPG.AbilityCon",
-  "int": "AKRPG.AbilityInt",
-  "wis": "AKRPG.AbilityWis",
-  "cha": "AKRPG.AbilityCha"
+  "str": "Strength",
+  "dex": "Dexterity",
+  "con": "Constitution",
+  "int": "Intelligence",
+  "wis": "Wisdom",
+  "cha": "Charisma"
 };
 
 AKRPG.abilityAbbreviations = {
@@ -73,3 +73,38 @@ AKRPG.spellDomains = {
   "sky": "AKRPG.SchoolSky",
   "void": "AKRPG.SchoolVoid"
 };
+
+// Weapon Properties
+AKRPG.weaponProperties = {
+  "finesse": "Finesse",
+  "light": "Light",
+  "thrown": "Thrown",
+  "versatile": "Versatile",
+  "reach": "Reach",
+  "heavy": "Heavy",
+  "reload": "Reload"
+};
+
+AKRPG.actionTypes = {
+  "action": "Action",
+  "bonusAction": "Bonus Action",
+  "reaction": "Reaction",
+  "movementAction": "Movement Action",
+  "interactAction": "Interact Action",
+  "freeAction": "Free Action",
+  "special": "Special",
+  "none": "None"
+}
+
+AKRPG.damageTypes = {
+  "bludgeoning": "Bludgeoning",
+  "slashing": "Slashing",
+  "piercing": "Piercing",
+  "fire": "Fire",
+  "cold": "Cold",
+  "lightning": "Lightning",
+  "acid": "Acid",
+  "radiant": "Radiant",
+  "necrotic": "Necrotic",
+  "void": "Void"
+}

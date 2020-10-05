@@ -2,21 +2,13 @@
   "name": "AKRPG",
   "title": "Ashen Kingdoms RPG",
   "description": "This is the Foundry system module for Ashen Kingdoms Roleplaying Game.",
-  "version": "0.1.2",
+  "version": "0.1.6",
   "templateVersion": 2,
   "author": "Ash Bhatnagar",
   "scripts": [],
   "esmodules": ["akrpg.js"],
   "styles": ["akrpg.css"],
   "packs": [
-    {
-      "name": "races",
-      "label": "Races",
-      "system": "AKRPG",
-      "module": "AKRPG",
-      "path": "packs/races.db",
-      "entity": "Item"
-    },
     {
       "name": "spells",
       "label": "Spells",

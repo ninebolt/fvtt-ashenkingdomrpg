@@ -1,0 +1,26 @@
+<div class="form-group input-select">
+    <label>Activation</label>
+    <div class="form-fields">
+        <select name="data.actionType">
+            {{#select data.actionType}}
+            <option value=""></option>
+            {{#each config.actionTypes as |name key|}}
+            <option value="{{key}}">{{name}}</option>
+            {{/each}}
+            {{/select}}
+        </select>
+    </div>
+</div>
+
+{{!-- Ability Range --}}
+<div class="form-group input-select">
+    <label>Range</label>
+    <div class="form-fields">
+        <input type="text" name="data.range.minimum" value="{{data.range.minimum}}" data-dtype="Number"
+            placeholder="Min" />
+        <span class="sep">/</span>
+        <input type="text" name="data.range.maximum" value="{{data.range.maximum}}" data-dtype="Number"
+            placeholder="Max" />
+        <input type="text" name="data.range.unit" value="{{data.range.unit}}" data-dtype="Number" placeholder="Units" />
+    </div>
+</div>
