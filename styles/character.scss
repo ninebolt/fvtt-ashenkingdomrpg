@@ -1,0 +1,50 @@
+@import "variables";
+
+.akrpg.sheet.actor.character {
+    min-width: 720px;
+    min-height: 680px;
+
+    .sheet-header {
+        display: flex;
+        height: 100px;
+        border-bottom: solid 2px $grey;
+
+        .name {
+            height: calc(100% - 32px);
+        }
+
+        .attributes {
+            border-top: solid 2px $grey;
+
+            .attribute {
+                display: flex;
+                align-items: center;
+                border-right: 2px solid $grey;
+                padding: 2px 4px;
+
+                &:last-child {
+                    border-right: none;
+                }
+
+                input {
+                    text-align: center;
+                }
+            }
+        }
+
+        .token {
+            min-width: 100px;
+            max-width: 100px;
+            height: 100px;
+
+            margin: 0;
+            border: none;
+
+            border-left: solid 2px $grey;
+        }
+    }
+
+    .imp-values {
+        border-bottom: solid 2px $grey;
+    }
+}
