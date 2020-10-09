@@ -8,12 +8,17 @@ Hooks.once("init", async function () {
     console.log("AKRPG | System Loading");
 
     game.akrpg = {
-        application: {},
+        application: {
+            AKRPGActorSheetCharacter,
+        },
         entities: {
             AKRPGActor,
             AKRPGItem,
         },
     };
+
+    CONFIG.Actor.entityClass = AKRPGActor;
+    CONFIG.AKRPG = AKRPG;
 
     Actors.unregisterSheet("core", ActorSheet);
     Actors.registerSheet("akrpg", AKRPGActorSheetCharacter, {

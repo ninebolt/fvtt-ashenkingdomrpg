@@ -13,10 +13,10 @@
             height: calc(100% - 32px);
         }
 
-        .attributes {
+        .coreValues {
             border-top: solid 2px $grey;
 
-            .attribute {
+            .coreValue {
                 display: flex;
                 align-items: center;
                 border-right: 2px solid $grey;
@@ -46,5 +46,87 @@
 
     .imp-values {
         border-bottom: solid 2px $grey;
+    }
+
+    .sheet-body {
+        margin: 8px 2px;
+
+        .attributes {
+            .abilityScores {
+                border-right: solid 2px $grey;
+                max-width: 100px;
+
+                .abilityScore {
+                    border-bottom: solid 2px $grey;
+                    border-right: none;
+
+                    &:first-child {
+                        border-top: solid 2px $grey;
+                    }
+                }
+            }
+        }
+
+        .skills {
+            margin: 0 4px;
+            border: solid 2px $grey;
+            border-left: none;
+            padding: 2px;
+
+            .skill {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                align-items: center;
+                margin-bottom: 2px;
+
+                .proficiency-container {
+                    display: flex;
+                    flex-wrap: nowrap;
+                    margin-right: 2px;
+
+                    .proficiency-box {
+                        cursor: pointer;
+                        border: solid 1px $grey;
+                        border-right: none;
+                        width: 20px;
+                        height: 20px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        &:last-child {
+                            border-right: solid 1px $grey;
+                        }
+
+                        &.unknown.proficiency-unknown,
+                        &.known.proficiency-known,
+                        &.trained.proficiency-trained,
+                        &.expert.proficiency-expert {
+                            color: $white;
+                            background-color: $text-dark;
+                        }
+                    }
+                }
+
+                .skill-name {
+                    font-weight: 700;
+                    margin-right: 4px;
+                    font-size: 14px;
+                    width: 120px;
+                    cursor: pointer;
+                }
+
+                .skill-additionalModifier {
+                    width: 25px;
+                }
+
+                .skill-total {
+                    font-weight: 700;
+                    width: 25px;
+                    text-align: center;
+                }
+            }
+        }
     }
 }

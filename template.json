@@ -27,17 +27,20 @@
                     "fort": {
                         "base": 0,
                         "baseAbility": "con",
-                        "additionalModifier": 0
+                        "additionalModifier": 0,
+                        "value": 0
                     },
                     "ref": {
                         "base": 0,
-                        "baseAbility": "con",
-                        "additionalModifier": 0
+                        "baseAbility": "dex",
+                        "additionalModifier": 0,
+                        "value": 0
                     },
                     "will": {
                         "base": 0,
-                        "baseAbility": "con",
-                        "additionalModifier": 0
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0
                     }
                 },
                 "hitPoints": {
@@ -63,6 +66,13 @@
                 "characterDC": {
                     "value": 10,
                     "additionalModifier": 0
+                },
+                "spellAttack": {
+                    "value": 0,
+                    "additionalModifier": 0
+                },
+                "baseAttackBonus": {
+                    "value": 0
                 },
                 "languages": ""
             },
@@ -228,6 +238,7 @@
                 "race": "",
                 "class": "",
                 "background": "",
+                "signatureAbility": "wis",
                 "level": 1
             }
         },

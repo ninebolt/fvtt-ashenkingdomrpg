@@ -10,11 +10,11 @@
                     placeholder="Name"
                 />
             </h1>
-            <div class="attributes flexrow">
-                <div class="attribute race"><input type="text" name="data.attributes.race" value="{{data.attributes.race}}" placeholder="Race" /></div>
-                <div class="attribute class"><input type="text" name="data.attributes.class" value="{{data.attributes.class}}" placeholder="Class" /></div>
-                <div class="attribute background"><input type="text" name="data.attributes.background" value="{{data.attributes.background}}" placeholder="Background" /></div>
-                <div class="attribute level">Level <input type="text" name="data.attributes.level" value="{{data.attributes.level}}" placeholder="1" /></label></div>
+            <div class="coreValues flexrow">
+                <div class="coreValue race"><input type="text" name="data.attributes.race" value="{{data.attributes.race}}" placeholder="Race" /></div>
+                <div class="coreValue class"><input type="text" name="data.attributes.class" value="{{data.attributes.class}}" placeholder="Class" /></div>
+                <div class="coreValue background"><input type="text" name="data.attributes.background" value="{{data.attributes.background}}" placeholder="Background" /></div>
+                <div class="coreValue level">Level <input type="text" name="data.attributes.level" value="{{data.attributes.level}}" placeholder="1" /></label></div>
             </div>
         </div>
         <img
@@ -34,7 +34,6 @@
                 <input type="text" name="data.hitPoints.max" value="{{data.hitPoints.max}}" placeholder="10" />
             </div>
             <div class="footer">
-                <label>Temp</label>
                 <input type="text" class="tempHitPoints" name="data.hitPoints.temp" value="{{data.hitPoints.temp}}" placeholder="+Temp"/>
             </div>
         </div>
@@ -52,7 +51,7 @@
         </div>
         <div class="trackable-container initiative">
             <h4 class="header">Initiative</h4>
-            <div class="body">{{ data.initiative.value }}</div>
+            <div class="body">{{numberFormat data.initiative.value decimals=0 sign=true}}</div>
             <div class="footer">
                 <label>Modifier</label>
                 <input type="text" name="data.initiative.additionalModifier" value="{{numberFormat data.initiative.additionalModifier decimals=0 sign=true}}" placeholder="0" />
@@ -75,4 +74,46 @@
             </div>
         </div>
     </section>
-</form>
+
+    <nav class="sheet-navigation tabs">
+        <a class="item active" data-tab="attributes">Attributes</a>
+        <a class="item" data-tab="inventory">Inventory</a>
+        <a class="item" data-tab="weapons">Weapons</a>
+        <a class="item" data-tab="spellbook">Spellbook</a>
+        <a class="item" data-tab="notes">Notes</a>
+    </nav>
+
+    <section class="sheet-body">
+        <div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
+            {{!-- Ability Scores --}}
+            <div class="abilityScores flexcol">
+                {{#each data.abilityScores as |ability id|}}
+                    <div class="trackable-container abilityScore" data-ability="{{id}}">
+                        <h6 class="header">{{ability.label}}</h6>
+                        <div class="body"><input type="text" name="data.abilityScores.{{id}}.value" value="{{ability.value}}" data-dtype="Number" placeholder="10" /></div>
+                        <div class="footer">{{numberFormat ability.mod decimals=0 sign=true}}</div>
+                    </div>
+                {{/each}}
+            </div>
+
+            {{!-- Skills --}}
+            <div class="skills flexcol">
+                {{#each data.skills as |skill id|}}
+                <div class="skill" data-skill="{{id}}">
+                    <div class="proficiency-container">
+                        <input type="hidden" name="data.skills.{{id}}.proficiency" value="{{skill.proficiency}}" data-dType="String" />
+                        <div class="proficiency-box unknown proficiency-{{skill.proficiency}}" data-skill="{{id}}" data-prof="unknown">U</div>
+                        <div class="proficiency-box known proficiency-{{skill.proficiency}}" data-skill="{{id}}" data-prof="known">K</div>
+                        <div class="proficiency-box trained proficiency-{{skill.proficiency}}" data-skill="{{id}}" data-prof="trained">T</div>
+                        <div class="proficiency-box expert proficiency-{{skill.proficiency}}" data-skill="{{id}}" data-prof="expert">E</div>
+                    </div>
+                    <h6 class="skill-name">{{skill.label}} ({{skill.baseAbility}})</h6>
+                    <input class="skill-additionalModifier" type="text" name="data.skills.{{id}}.additionalModifier" value="{{numberFormat skill.additionalModifier decimals=0 sign=true}}" />
+                    <span class="sep">=</span>
+                    <span class="skill-total">{{numberFormat skill.value decimals=0 sign=true}}</span>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </section>
+</form> 
