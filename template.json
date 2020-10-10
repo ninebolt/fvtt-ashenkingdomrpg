@@ -1,353 +1,285 @@
 {
-  "Actor": {
-    "types": ["character"],
-    "templates": {
-      "base": {
-        "abilityScores": {
-          "str": {
-            "value": 10,
-            "label": "Strength"
-          },
-          "dex": {
-            "value": 10,
-            "label": "Dexterity"
-          },
-          "con": {
-            "value": 10,
-            "label": "Constitution"
-          },
-          "int": {
-            "value": 10,
-            "label": "Intelligence"
-          },
-          "wis": {
-            "value": 10,
-            "label": "Wisdom"
-          },
-          "cha": {
-            "value": 10,
-            "label": "Charisma"
-          }
+    "Actor": {
+        "types": ["character", "summon", "npc", "monster"],
+        "templates": {
+            "base": {
+                "abilityScores": {
+                    "str": {
+                        "value": 10
+                    },
+                    "dex": {
+                        "value": 10
+                    },
+                    "con": {
+                        "value": 10
+                    },
+                    "int": {
+                        "value": 10
+                    },
+                    "wis": {
+                        "value": 10
+                    },
+                    "cha": {
+                        "value": 10
+                    }
+                },
+                "savingThrows": {
+                    "fort": {
+                        "base": 0,
+                        "baseAbility": "con",
+                        "additionalModifier": 0,
+                        "value": 0
+                    },
+                    "ref": {
+                        "base": 0,
+                        "baseAbility": "dex",
+                        "additionalModifier": 0,
+                        "value": 0
+                    },
+                    "will": {
+                        "base": 0,
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0
+                    }
+                },
+                "hitPoints": {
+                    "max": 0,
+                    "value": 0,
+                    "temp": 0
+                },
+                "initiative": {
+                    "value": 0,
+                    "additionalModifier": 0
+                },
+                "strain": {
+                    "max": 0,
+                    "value": 0
+                },
+                "deathSaves": {
+                    "value": 0
+                },
+                "notes": "",
+                "size": "medium",
+                "speed": "30 ft",
+                "armorClass": 10,
+                "characterDC": {
+                    "value": 10,
+                    "additionalModifier": 0
+                },
+                "spellAttack": {
+                    "value": 0,
+                    "additionalModifier": 0
+                },
+                "baseAttackBonus": {
+                    "value": 0
+                },
+                "languages": ""
+            },
+            "skills": {
+                "skills": {
+                    "acr": {
+                        "proficiency": "unknown",
+                        "baseAbility": "dex",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "ani": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "arc": {
+                        "proficiency": "unknown",
+                        "baseAbility": "int",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "ath": {
+                        "proficiency": "unknown",
+                        "baseAbility": "str",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "dec": {
+                        "proficiency": "unknown",
+                        "baseAbility": "cha",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "his": {
+                        "proficiency": "unknown",
+                        "baseAbility": "int",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "ins": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "itm": {
+                        "proficiency": "unknown",
+                        "baseAbility": "cha",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "inv": {
+                        "proficiency": "unknown",
+                        "baseAbility": "int",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "med": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "nat": {
+                        "proficiency": "unknown",
+                        "baseAbility": "int",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "prc": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "prf": {
+                        "proficiency": "unknown",
+                        "baseAbility": "cha",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "per": {
+                        "proficiency": "unknown",
+                        "baseAbility": "cha",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "rel": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "slt": {
+                        "proficiency": "unknown",
+                        "baseAbility": "dex",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "ste": {
+                        "proficiency": "unknown",
+                        "baseAbility": "dex",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "sur": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    }
+                }
+            },
+            "equipment": {
+                "carryingCapacity": {
+                    "value": 0,
+                    "encumberance": 5,
+                    "max": 10
+                },
+                "currency": {
+                    "copper": 0,
+                    "silver": 0,
+                    "gold": 0,
+                    "platinum": 0
+                }
+            },
+            "miscResources": {
+                "miscResource1": {
+                    "label": "Resource 1",
+                    "value": 0,
+                    "max": 0
+                },
+                "miscResource2": {
+                    "label": "Resource 2",
+                    "value": 0,
+                    "max": 0
+                }
+            }
         },
-        "hitPoints": {
-          "maximum": 0,
-          "current": 0,
-          "temp": 0
+        "character": {
+            "templates": ["base", "skills", "equipment", "miscResources"],
+            "attributes": {
+                "race": "",
+                "class": "",
+                "background": "",
+                "signatureAbility": "wis",
+                "level": 1
+            }
         },
-        "hitDice": {
-          "maximum": 1,
-          "current": 1
+        "summon": {
+            "templates": ["base", "skills", "miscResources"]
         },
-        "deathSaves": 0,
-        "savingThrows": {
-          "fortitude": {
-            "base": 0,
-            "baseAbility": "con",
-            "additionalModifier": 0,
-            "label": "Fortitude"
-          },
-          "reflex": {
-            "base": 0,
-            "baseAbility": "dex",
-            "additionalModifier": 0,
-            "label": "Reflex"
-          },
-          "will": {
-            "base": 0,
-            "baseAbility": "wis",
-            "additionalModifier": 0,
-            "label": "Will"
-          }
-        },
-        "attributes": {
-          "class": "",
-          "level": 1,
-          "background": "",
-          "race": "human",
-          "alignment": "",
-          "characterDC": {
-            "value": 10,
-            "additionalModifier": 0
-          },
-          "signatureAbility": "wis",
-          "armorClass": 10,
-          "speed": "30 feet",
-          "baseAttackBonus": 0,
-          "initiative": {
-            "value": 0,
-            "additionalModifier": 0
-          }
-        },
-        "strain": {
-          "maximum": 0,
-          "current": 0,
-          "additionalModifier": 0
-        },
-        "proficiencies": {
-          "weaponProficiencies": [],
-          "armorProficiencies": [],
-          "languages": [],
-          "other": []
-        },
-        "weapons": [],
-        "skills": {
-          "acrobatics": {
-            "proficiency": "unknown",
-            "baseAbility": "dex",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Acrobatics",
-            "skillType": "general"
-          },
-          "animalHandling": {
-            "proficiency": "unknown",
-            "baseAbility": "wis",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Animal Handling",
-            "skillType": "general"
-          },
-          "arcana": {
-            "proficiency": "unknown",
-            "baseAbility": "int",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Arcana",
-            "skillType": "general"
-          },
-          "athletics": {
-            "proficiency": "unknown",
-            "baseAbility": "str",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Athletics",
-            "skillType": "general"
-          },
-          "deception": {
-            "proficiency": "unknown",
-            "baseAbility": "cha",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Deception",
-            "skillType": "general"
-          },
-          "history": {
-            "proficiency": "unknown",
-            "baseAbility": "int",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "History",
-            "skillType": "general"
-          },
-          "insight": {
-            "proficiency": "unknown",
-            "baseAbility": "wis",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Insight",
-            "skillType": "general"
-          },
-          "intimidation": {
-            "proficiency": "unknown",
-            "baseAbility": "cha",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Intimidation",
-            "skillType": "general"
-          },
-          "investigation": {
-            "proficiency": "unknown",
-            "baseAbility": "int",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Investigation",
-            "skillType": "general"
-          },
-          "medicine": {
-            "proficiency": "unknown",
-            "baseAbility": "wis",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Medicine",
-            "skillType": "general"
-          },
-          "nature": {
-            "proficiency": "unknown",
-            "baseAbility": "int",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Nature",
-            "skillType": "general"
-          },
-          "perception": {
-            "proficiency": "unknown",
-            "baseAbility": "wis",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Perception",
-            "skillType": "general"
-          },
-          "performance": {
-            "proficiency": "unknown",
-            "baseAbility": "cha",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Performance",
-            "skillType": "general"
-          },
-          "persuasion": {
-            "proficiency": "unknown",
-            "baseAbility": "cha",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Persuasion",
-            "skillType": "general"
-          },
-          "religion": {
-            "proficiency": "unknown",
-            "baseAbility": "wis",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Religion",
-            "skillType": "general"
-          },
-          "sleightOfHand": {
-            "proficiency": "unknown",
-            "baseAbility": "dex",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Sleight of Hand",
-            "skillType": "general"
-          },
-          "Stealth": {
-            "proficiency": "unknown",
-            "baseAbility": "dex",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Stealth",
-            "skillType": "general"
-          },
-          "survival": {
-            "proficiency": "unknown",
-            "baseAbility": "wis",
-            "additionalModifier": 0,
-            "value": 0,
-            "label": "Survival",
-            "skillType": "general"
-          }
-        },
-        "equipment": {
-          "carryingCapacity": {
-            "current": 0,
-            "encumbered": 5,
-            "maximum": 10,
-            "additionalModifier": 0
-          },
-          "currency": {
-            "copper": 0,
-            "silver": 0,
-            "gold": 0,
-            "platinum": 0
-          }
+        "monster": {
+            "templates": ["base", "miscResources"]
         }
-      }
     },
-    "character": {
-      "templates": ["base"],
-      "additionalResource1": {
-        "label": "Resource 1",
-        "value": 5,
-        "maximum": 5
-      },
-      "additionalResource2": {
-        "label": "Resource 2",
-        "value": 5,
-        "maximum": 5
-      }
-    }
-  },
-  "Item": {
-    "types": ["weapon", "armor", "equipment", "spell"],
-    "templates": {
-      "itemDescription": {
-        "description": ""
-      },
-      "physicalItem": {
-        "quantity": 1,
-        "bulk": "-",
-        "price": "0",
-        "rarity": "common",
-        "hands": 1
-      },
-      "action": {
-        "ability": null,
-        "actionType": null,
-        "attackBonus": 0,
-        "chatFlavor": "",
-        "critical": null,
-        "damage": {
-          "parts": [],
-          "versatile": ""
+    "Item": {
+        "types": ["weapon", "armor", "equipment", "spell"],
+        "templates": {
+            "itemDescription": {
+                "description": ""
+            },
+            "physicalItem": {
+                "quantity": 1,
+                "bulk": "-",
+                "price": 0,
+                "rarity": "common",
+                "hands": 1
+            }
         },
-        "formula": "",
-        "save": {
-          "ability": "",
-          "dc": null,
-          "scaling": "spell"
+        "weapon": {
+            "templates": ["itemDescription", "physicalItem"],
+            "primaryWeaponType": "simple",
+            "secondaryWeaponType": "melee",
+            "range": {
+                "min": 5,
+                "max": 10,
+                "unit": "feet"
+            },
+            "properties": {
+                "finesse": false,
+                "light": false,
+                "thrown": false,
+                "reach": false,
+                "heavy": false,
+                "reload": false
+            }
         }
-      }
-    },
-    "weapon": {
-      "templates": ["itemDescription", "physicalItem", "action"],
-      "primaryWeaponType": "melee",
-      "secondaryWeaponType": "simple",
-      "range": {
-        "minimum": 5,
-        "maximum": 10,
-        "unit": "Feet"
-      },
-      "properties": {
-        "finesse": false,
-        "light": false,
-        "thrown": false,
-        "versatile": false,
-        "reach": false,
-        "heavy": false,
-        "reload": false
-      }
-    },
-    "armor": {
-      "templates": ["itemDescription", "physicalItem"],
-      "armorType": "light",
-      "baseAC": "11 + Dex modifier"
-    },
-    "shield": {
-      "templates": ["itemDescription", "physicalItem"],
-      "shieldType": "wooden",
-      "acBonus": "+1",
-      "properties": {
-        "light": false,
-        "heavy": false
-      }
-    },
-    "equipment": {
-      "template": ["itemDescription", "physicalItem"]
-    },
-    "spell": {
-      "templates": ["itemDescription", "action"],
-      "arcanumCost": 1,
-      "area": "",
-      "castTime": "Action",
-      "components": {
-        "verbal": false,
-        "somatic": false,
-        "material": false,
-        "cost": ""
-      },
-      "concentration": false,
-      "domain": "Sky",
-      "duration": "1 minute",
-      "range": "Touch"
     }
-  }
 }
