@@ -107,12 +107,38 @@
                         <div class="proficiency-box trained proficiency-{{skill.proficiency}}" data-skill="{{id}}" data-prof="trained">T</div>
                         <div class="proficiency-box expert proficiency-{{skill.proficiency}}" data-skill="{{id}}" data-prof="expert">E</div>
                     </div>
-                    <h6 class="skill-name">{{skill.label}} ({{skill.baseAbility}})</h6>
+                    <h6 class="skill-name">
+                        {{skill.label}}
+                    </h6>
+                    <span class="skill-ability-container">
+                        <input type="hidden" name="data.skills.{{id}}.baseAbility" value="{{skill.baseAbility}}" />
+                        (<span class="skill-proficiency">{{skill.baseAbility}}</span>)
+                    </span>
                     <input class="skill-additionalModifier" type="text" name="data.skills.{{id}}.additionalModifier" value="{{numberFormat skill.additionalModifier decimals=0 sign=true}}" />
                     <span class="sep">=</span>
                     <span class="skill-total">{{numberFormat skill.value decimals=0 sign=true}}</span>
                 </div>
                 {{/each}}
+            </div>
+
+            {{!-- Third Column --}}
+            <div class="misc flexcol">
+                <div class="savingThrows flexcol">
+                    <h4 class="section-title">Saving  Throws</h4>
+                    {{#each data.savingThrows as |savingThrow st|}}
+                    <div class="savingThrow flexrow" data-savingThrow="{{st}}">
+                        <h6 class="savingThrow-name">{{savingThrow.label}}</h6>
+                        <span class="savingThrow-baseAbility-container">
+                            <input type="hidden" name="data.savingThrows.{{st}}.baseAbility" value="{{savingThrow.baseAbility}}" />
+                            (<span class="savingThrow-baseAbility">{{savingThrow.baseAbility}}</span>)
+                        </span>
+                        <input type="text" name="data.savingThrows.{{st}}.base" value="{{numberFormat savingThrow.base decimals=0 sign=true}}" placeholder="Base"/>
+                        <input type="text" name="data.savingThrows.{{st}}.additionalModifier" value="{{numberFormat savingThrow.additionalModifier deciamls=0 sign=true}}" placeholder="+Mod"/>
+                        <span class="sep">=</span>
+                        <span class="total">{{numberFormat savingThrow.value decimals=0 sign=true}}</span>
+                    </div>
+                    {{/each}}
+                </div>
             </div>
         </div>
     </section>

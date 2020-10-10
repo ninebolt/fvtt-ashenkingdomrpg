@@ -15,12 +15,18 @@ AKRPG.abilities = {
 };
 
 AKRPG.abilityAbbreviations = {
-    str: "Strength",
-    dex: "Dexterity",
-    con: "Constitution",
-    int: "Intelligence",
-    wis: "Wisdom",
-    cha: "Charisma",
+    str: "Str",
+    dex: "Dex",
+    con: "Con",
+    int: "Int",
+    wis: "Wis",
+    cha: "Cha",
+};
+
+AKRPG.savingThrows = {
+    fort: "Fortitude",
+    ref: "Reflex",
+    will: "Will",
 };
 
 /**

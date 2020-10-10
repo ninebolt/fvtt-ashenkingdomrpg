@@ -45,6 +45,11 @@ export default class AKRPGActorSheet extends ActorSheet {
             skl.label = CONFIG.AKRPG.skills[s];
         }
 
+        // Saving Throws
+        for (let [s, sv] of Object.entries(data.actor.data.savingThrows)) {
+            sv.label = CONFIG.AKRPG.savingThrows[s];
+        }
+
         console.log("DATA", data);
         return data;
     }
@@ -53,8 +58,8 @@ export default class AKRPGActorSheet extends ActorSheet {
      * Event Listeners
      */
     activateListeners(html) {
-        // Updating Skill Proficiency
         html.find(".skill-name").click(this._rollSkillCheck.bind(this));
+        html.find(".savingThrow-name").click(this._rollSavingThrow.bind(this));
 
         super.activateListeners(html);
     }
@@ -66,7 +71,24 @@ export default class AKRPGActorSheet extends ActorSheet {
     _rollSkillCheck(event) {
         event.preventDefault();
         const skill = event.currentTarget.parentElement.dataset.skill;
-        const skillName = AKRPG.skills[skill];
+        const skillName =
+            AKRPG.skills[skill] ||
+            this.data.data.skills[skill].label ||
+            "Skill";
         this.actor.rollSkill(skill, skillName);
+    }
+
+    /**
+     * @private
+     * Rolls a saving throw when clicked
+     */
+    _rollSavingThrow(event) {
+        event.preventDefault();
+        const savingThrow =
+            event.currentTarget.parentElement.dataset.savingthrow;
+        const savingThrowName =
+            AKRPG.savingThrows[savingThrow] || "Saving Throw";
+
+        this.actor.rollSavingThrow(savingThrow, savingThrowName);
     }
 }

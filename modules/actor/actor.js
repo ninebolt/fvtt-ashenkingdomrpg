@@ -27,12 +27,24 @@ export default class AKRPGActor extends Actor {
      */
     rollSkill(skillId, skillName) {
         const parts = ["1d20"];
-        const modifier = this.data.data.skills[skillId].value;
+        const modifier = this.data.data.skills[skillId].value || 0;
 
         parts.push("@abilityMod");
 
         const rollData = { abilityMod: modifier };
         const flavor = `${skillName} Roll`;
+
+        return d20Roll({ parts, data: rollData, flavor });
+    }
+
+    rollSavingThrow(savingThrowId, savingThrowName) {
+        const parts = ["1d20"];
+        const modifier = this.data.data.savingThrows[savingThrowId].value || 0;
+
+        parts.push("@abilityMod");
+
+        const rollData = { abilityMod: modifier };
+        const flavor = `${savingThrowName} Roll`;
 
         return d20Roll({ parts, data: rollData, flavor });
     }

@@ -127,7 +127,7 @@
                         "value": 0,
                         "skillType": "general"
                     },
-                    "int": {
+                    "itm": {
                         "proficiency": "unknown",
                         "baseAbility": "cha",
                         "additionalModifier": 0,
