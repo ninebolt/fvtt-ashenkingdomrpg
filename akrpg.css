@@ -1,0 +1,242 @@
+/** Colors */
+/** Colors */
+.akrpg.sheet.actor .window-content {
+  padding: 0; }
+
+.akrpg.sheet.actor .trackable-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: 2px 4px;
+  border-right: solid 2px #b8b7b2; }
+  .akrpg.sheet.actor .trackable-container:last-child {
+    border-right: none; }
+  .akrpg.sheet.actor .trackable-container .header {
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-bottom: solid 1px #b8b7b2;
+    font-size: 18px;
+    height: 18px;
+    line-height: 16px;
+    margin: 4px 8px 2px;
+    font-weight: 700;
+    color: #4b4a44; }
+    .akrpg.sheet.actor .trackable-container .header input {
+      font-size: inherit;
+      height: inherit;
+      line-height: inherit;
+      margin: inherit;
+      font-weight: inherit;
+      color: #4b4a44; }
+  .akrpg.sheet.actor .trackable-container .body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    height: 30px;
+    line-height: 30px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    font-family: "Modesto Condensed", "Palatino Linotype", serif; }
+    .akrpg.sheet.actor .trackable-container .body.multiple input {
+      flex: 0 0 33%; }
+  .akrpg.sheet.actor .trackable-container .footer {
+    flex-grow: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 18px;
+    font-size: 12px;
+    font-weight: 400;
+    font-family: "Modesto Condensed", "Palatino Linotype", serif;
+    /** Special Colors for values */ }
+    .akrpg.sheet.actor .trackable-container .footer input {
+      max-width: 30px;
+      margin: 0 2px;
+      height: 18px; }
+    .akrpg.sheet.actor .trackable-container .footer input.tempHitPoints {
+      color: #4e9fe2; }
+
+/** Colors */
+.akrpg.sheet.actor.character {
+  min-width: 720px;
+  min-height: 680px; }
+  .akrpg.sheet.actor.character .sheet-header {
+    display: flex;
+    height: 100px;
+    border-bottom: solid 2px #b8b7b2; }
+    .akrpg.sheet.actor.character .sheet-header .name {
+      height: calc(100% - 32px); }
+    .akrpg.sheet.actor.character .sheet-header .coreValues {
+      border-top: solid 2px #b8b7b2; }
+      .akrpg.sheet.actor.character .sheet-header .coreValues .coreValue {
+        display: flex;
+        align-items: center;
+        border-right: 2px solid #b8b7b2;
+        padding: 2px 4px; }
+        .akrpg.sheet.actor.character .sheet-header .coreValues .coreValue:last-child {
+          border-right: none; }
+        .akrpg.sheet.actor.character .sheet-header .coreValues .coreValue input {
+          text-align: center; }
+    .akrpg.sheet.actor.character .sheet-header .token {
+      min-width: 100px;
+      max-width: 100px;
+      height: 100px;
+      margin: 0;
+      border: none;
+      border-left: solid 2px #b8b7b2; }
+  .akrpg.sheet.actor.character .imp-values {
+    border-bottom: solid 2px #b8b7b2; }
+  .akrpg.sheet.actor.character .sheet-body {
+    margin: 8px 2px; }
+    .akrpg.sheet.actor.character .sheet-body .attributes .abilityScores {
+      border-right: solid 2px #b8b7b2;
+      max-width: 100px; }
+      .akrpg.sheet.actor.character .sheet-body .attributes .abilityScores .abilityScore {
+        border-bottom: solid 2px #b8b7b2;
+        border-right: none; }
+        .akrpg.sheet.actor.character .sheet-body .attributes .abilityScores .abilityScore:first-child {
+          border-top: solid 2px #b8b7b2; }
+    .akrpg.sheet.actor.character .sheet-body .skills {
+      border: solid 2px #b8b7b2;
+      border-left: none;
+      padding: 2px; }
+      .akrpg.sheet.actor.character .sheet-body .skills .skill {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        margin-bottom: 2px; }
+        .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container {
+          display: flex;
+          flex-wrap: nowrap;
+          margin-right: 2px; }
+          .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box {
+            cursor: pointer;
+            border: solid 1px #b8b7b2;
+            border-right: none;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center; }
+            .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box:last-child {
+              border-right: solid 1px #b8b7b2; }
+            .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box.unknown.proficiency-unknown, .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box.known.proficiency-known, .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box.trained.proficiency-trained, .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box.expert.proficiency-expert {
+              color: #ffffff;
+              background-color: #000000; }
+        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-name {
+          font-weight: 700;
+          margin-right: 4px;
+          font-size: 14px;
+          width: 120px;
+          cursor: pointer; }
+        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-proficiency {
+          cursor: pointer; }
+        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-ability-contianer {
+          width: 35px; }
+        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-additionalModifier {
+          width: 25px; }
+        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-total {
+          font-weight: 700;
+          width: 25px;
+          text-align: center; }
+    .akrpg.sheet.actor.character .sheet-body .misc {
+      display: flex;
+      flex-direction: column; }
+      .akrpg.sheet.actor.character .sheet-body .misc .death-tracker {
+        padding: 4px 0; }
+        .akrpg.sheet.actor.character .sheet-body .misc .death-tracker input {
+          margin: 8px;
+          font-size: 28px;
+          text-align: center; }
+          .akrpg.sheet.actor.character .sheet-body .misc .death-tracker input.5 {
+            color: #8b0000; }
+      .akrpg.sheet.actor.character .sheet-body .misc .savingThrows {
+        padding: 2px; }
+        .akrpg.sheet.actor.character .sheet-body .misc .savingThrows .savingThrow {
+          padding-bottom: 2px;
+          align-items: center;
+          flex-grow: unset;
+          width: 90%; }
+          .akrpg.sheet.actor.character .sheet-body .misc .savingThrows .savingThrow .total {
+            font-weight: 700; }
+      .akrpg.sheet.actor.character .sheet-body .misc .character-options {
+        display: flex;
+        flex-direction: column;
+        padding: 2px; }
+        .akrpg.sheet.actor.character .sheet-body .misc .character-options .signature-ability-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center; }
+        .akrpg.sheet.actor.character .sheet-body .misc .character-options .bab-container {
+          display: flex;
+          align-items: center; }
+          .akrpg.sheet.actor.character .sheet-body .misc .character-options .bab-container input {
+            text-align: right; }
+
+.akrpg {
+  /**
+* Default classes
+*/
+  /**
+* Generic Styling
+*/ }
+  .akrpg .flexrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap; }
+  .akrpg .flexcol {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap; }
+  .akrpg .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4b4a44;
+    margin-bottom: 2px;
+    border-bottom: solid 2px #b8b7b2;
+    flex-grow: unset; }
+  .akrpg .subsection-title {
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    flex-grow: 1; }
+  .akrpg h1,
+  .akrpg h2,
+  .akrpg h3,
+  .akrpg h4,
+  .akrpg h5,
+  .akrpg h6 {
+    margin: 0;
+    padding: 0;
+    font-family: "Modesto Condensed", "Palatino Linotype", serif; }
+  .akrpg input[type="text"],
+  .akrpg input[type="number"] {
+    width: calc(100% - 2px);
+    min-width: 20px;
+    height: 24px;
+    background: none;
+    padding: 1px 3px;
+    margin: 0;
+    color: #191813;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: inherit;
+    line-height: inherit;
+    border: none;
+    border-radius: 3px; }
+    .akrpg input[type="text"]:hover, .akrpg input[type="text"]:focus, .akrpg input[type="text"]:active,
+    .akrpg input[type="number"]:hover,
+    .akrpg input[type="number"]:focus,
+    .akrpg input[type="number"]:active {
+      border: 1px solid #7a7971;
+      background: rgba(0, 0, 0, 0.05); }
+  .akrpg span.sep {
+    font-weight: 400;
+    color: #4b4a44;
+    font-family: "Modesto Condensed", "Palatino Linotype", serif; }

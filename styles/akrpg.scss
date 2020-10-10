@@ -1,0 +1,81 @@
+@import "variables";
+@import "actor";
+@import "character";
+
+.akrpg {
+    /**
+* Default classes
+*/
+    .flexrow {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+
+    .flexcol {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: nowrap;
+    }
+
+    .section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: $text-light;
+        margin-bottom: 2px;
+        border-bottom: solid 2px $grey;
+        flex-grow: unset;
+    }
+
+    .subsection-title {
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        flex-grow: 1;
+    }
+
+    /**
+* Generic Styling
+*/
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 0;
+        padding: 0;
+
+        font-family: "Modesto Condensed", "Palatino Linotype", serif;
+    }
+
+    input[type="text"],
+    input[type="number"] {
+        width: calc(100% - 2px);
+        min-width: 20px;
+        height: 24px;
+        background: none;
+        padding: 1px 3px;
+        margin: 0;
+        color: #191813;
+        font-family: inherit;
+        font-size: inherit;
+        text-align: inherit;
+        line-height: inherit;
+        border: none;
+        border-radius: 3px;
+
+        &:hover,
+        &:focus,
+        &:active {
+            border: 1px solid #7a7971;
+            background: rgba(0, 0, 0, 0.05);
+        }
+    }
+
+    span.sep {
+        font-weight: 400;
+        color: $text-light;
+        font-family: "Modesto Condensed", "Palatino Linotype", serif;
+    }
+}

@@ -1,0 +1,90 @@
+@import "variables";
+
+.akrpg.sheet.actor {
+    // background-color: $white;
+
+    .window-content {
+        padding: 0;
+    }
+
+    .trackable-container {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        padding: 2px 4px;
+
+        border-right: solid 2px $grey;
+
+        &:last-child {
+            border-right: none;
+        }
+
+        .header {
+            flex-grow: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            border-bottom: solid 1px $grey;
+
+            font-size: 18px;
+            height: 18px;
+            line-height: 16px;
+            margin: 4px 8px 2px;
+            font-weight: 700;
+            color: $text-light;
+
+            input {
+                font-size: inherit;
+                height: inherit;
+                line-height: inherit;
+                margin: inherit;
+                font-weight: inherit;
+                color: $text-light;
+            }
+        }
+
+        .body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+
+            height: 30px;
+            line-height: 30px;
+            font-size: 20px;
+            font-weight: 700;
+            color: $text-dark;
+            font-family: "Modesto Condensed", "Palatino Linotype", serif;
+
+            &.multiple input {
+                flex: 0 0 33%;
+            }
+        }
+
+        .footer {
+            flex-grow: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            line-height: 18px;
+            font-size: 12px;
+            font-weight: 400;
+            font-family: "Modesto Condensed", "Palatino Linotype", serif;
+
+            input {
+                max-width: 30px;
+                margin: 0 2px;
+                height: 18px;
+            }
+
+            /** Special Colors for values */
+            input.tempHitPoints {
+                color: $light-blue;
+            }
+        }
+    }
+}

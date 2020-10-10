@@ -1,0 +1,301 @@
+{
+    "Actor": {
+        "types": ["character", "summon", "npc", "monster"],
+        "templates": {
+            "base": {
+                "abilityScores": {
+                    "str": {
+                        "value": 10
+                    },
+                    "dex": {
+                        "value": 10
+                    },
+                    "con": {
+                        "value": 10
+                    },
+                    "int": {
+                        "value": 10
+                    },
+                    "wis": {
+                        "value": 10
+                    },
+                    "cha": {
+                        "value": 10
+                    }
+                },
+                "savingThrows": {
+                    "fort": {
+                        "base": 0,
+                        "baseAbility": "con",
+                        "additionalModifier": 0,
+                        "value": 0
+                    },
+                    "ref": {
+                        "base": 0,
+                        "baseAbility": "dex",
+                        "additionalModifier": 0,
+                        "value": 0
+                    },
+                    "will": {
+                        "base": 0,
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0
+                    }
+                },
+                "hitPoints": {
+                    "max": 0,
+                    "value": 0,
+                    "temp": 0
+                },
+                "initiative": {
+                    "value": 0,
+                    "additionalModifier": 0
+                },
+                "strain": {
+                    "max": 0,
+                    "value": 0
+                },
+                "deathSaves": {
+                    "value": 0
+                },
+                "notes": "",
+                "size": "medium",
+                "speed": "30 ft",
+                "armorClass": 10,
+                "characterDC": {
+                    "value": 10,
+                    "additionalModifier": 0
+                },
+                "spellAttack": {
+                    "value": 0,
+                    "additionalModifier": 0
+                },
+                "baseAttackBonus": {
+                    "value": 0
+                },
+                "languages": ""
+            },
+            "skills": {
+                "skills": {
+                    "acr": {
+                        "proficiency": "unknown",
+                        "baseAbility": "dex",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "ani": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "arc": {
+                        "proficiency": "unknown",
+                        "baseAbility": "int",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "ath": {
+                        "proficiency": "unknown",
+                        "baseAbility": "str",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "dec": {
+                        "proficiency": "unknown",
+                        "baseAbility": "cha",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "his": {
+                        "proficiency": "unknown",
+                        "baseAbility": "int",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "ins": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "itm": {
+                        "proficiency": "unknown",
+                        "baseAbility": "cha",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "inv": {
+                        "proficiency": "unknown",
+                        "baseAbility": "int",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "med": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "nat": {
+                        "proficiency": "unknown",
+                        "baseAbility": "int",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "prc": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "prf": {
+                        "proficiency": "unknown",
+                        "baseAbility": "cha",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "per": {
+                        "proficiency": "unknown",
+                        "baseAbility": "cha",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "rel": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "slt": {
+                        "proficiency": "unknown",
+                        "baseAbility": "dex",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "ste": {
+                        "proficiency": "unknown",
+                        "baseAbility": "dex",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    },
+                    "sur": {
+                        "proficiency": "unknown",
+                        "baseAbility": "wis",
+                        "additionalModifier": 0,
+                        "value": 0,
+                        "skillType": "general"
+                    }
+                }
+            },
+            "equipment": {
+                "carryingCapacity": {
+                    "value": 0,
+                    "encumberance": 5,
+                    "max": 10
+                },
+                "currency": {
+                    "copper": 0,
+                    "silver": 0,
+                    "gold": 0,
+                    "platinum": 0
+                }
+            },
+            "miscResources": {
+                "miscResource1": {
+                    "label": "Resource 1",
+                    "value": 0,
+                    "max": 0
+                },
+                "miscResource2": {
+                    "label": "Resource 2",
+                    "value": 0,
+                    "max": 0
+                }
+            }
+        },
+        "character": {
+            "templates": ["base", "skills", "equipment", "miscResources"],
+            "attributes": {
+                "race": "",
+                "class": "",
+                "background": "",
+                "signatureAbility": "wis",
+                "level": 1
+            }
+        },
+        "summon": {
+            "templates": ["base", "skills", "miscResources"]
+        },
+        "monster": {
+            "templates": ["base", "miscResources"]
+        }
+    },
+    "Item": {
+        "types": ["weapon", "armor", "equipment", "spell"],
+        "templates": {
+            "itemDescription": {
+                "description": ""
+            },
+            "physicalItem": {
+                "quantity": 1,
+                "bulk": "-",
+                "price": 0,
+                "rarity": "common",
+                "hands": 1
+            }
+        },
+        "weapon": {
+            "templates": ["itemDescription", "physicalItem"],
+            "primaryWeaponType": "simple",
+            "secondaryWeaponType": "melee",
+            "range": {
+                "min": 5,
+                "max": 10,
+                "unit": "feet"
+            },
+            "properties": {
+                "finesse": false,
+                "light": false,
+                "thrown": false,
+                "reach": false,
+                "heavy": false,
+                "reload": false
+            }
+        },
+        "spell": {
+            "templates": ["itemDescription"],
+            "arcanumCost": 1,
+            "area": "",
+            "castTime": "Action",
+            "components": {
+                "verbal": false,
+                "somatic": false,
+                "material": false,
+                "cost": ""
+            },
+            "concentration": false,
+            "domain": "sky",
+            "duration": "1 minute",
+            "range": "touch"
+        }
+    }
+}
