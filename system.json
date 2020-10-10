@@ -16,6 +16,6 @@
     "minimumCoreVersion": "0.7.3",
     "compatibleCoreVersion": "0.7.3",
     "url": "https://github.com/ninebolt/fvtt-ashenkingdomsrpg/",
-    "manifest": "https://raw.githubusercontent.com/ninebolt/fvtt-ashenkingdomrpg/system.json",
+    "manifest": "https://raw.githubusercontent.com/ninebolt/fvtt-ashenkingdomrpg/master/system.json",
     "download": "https://github.com/ninebolt/fvtt-ashenkingdomrpg/archive/master.zip"
 }
