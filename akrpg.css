@@ -102,7 +102,6 @@
         .akrpg.sheet.actor.character .sheet-body .attributes .abilityScores .abilityScore:first-child {
           border-top: solid 2px #b8b7b2; }
     .akrpg.sheet.actor.character .sheet-body .skills {
-      margin: 0 4px;
       border: solid 2px #b8b7b2;
       border-left: none;
       padding: 2px; }
@@ -138,32 +137,47 @@
           cursor: pointer; }
         .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-proficiency {
           cursor: pointer; }
+        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-ability-contianer {
+          width: 35px; }
         .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-additionalModifier {
           width: 25px; }
         .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-total {
           font-weight: 700;
           width: 25px;
           text-align: center; }
-    .akrpg.sheet.actor.character .sheet-body .savingThrows {
-      padding: 2px; }
-      .akrpg.sheet.actor.character .sheet-body .savingThrows h4 {
-        font-size: 18px;
-        font-weight: 700;
-        color: #4b4a44;
-        margin-bottom: 2px;
-        border-bottom: solid 2px #b8b7b2;
-        flex-grow: unset; }
-      .akrpg.sheet.actor.character .sheet-body .savingThrows .savingThrow {
-        padding-bottom: 2px;
-        align-items: center;
-        flex-grow: unset;
-        width: 90%; }
-        .akrpg.sheet.actor.character .sheet-body .savingThrows .savingThrow h6 {
-          font-weight: 700;
-          font-size: 14px;
-          cursor: pointer; }
-        .akrpg.sheet.actor.character .sheet-body .savingThrows .savingThrow .total {
-          font-weight: 700; }
+    .akrpg.sheet.actor.character .sheet-body .misc {
+      display: flex;
+      flex-direction: column; }
+      .akrpg.sheet.actor.character .sheet-body .misc .death-tracker {
+        padding: 4px 0; }
+        .akrpg.sheet.actor.character .sheet-body .misc .death-tracker input {
+          margin: 8px;
+          font-size: 28px;
+          text-align: center; }
+          .akrpg.sheet.actor.character .sheet-body .misc .death-tracker input.5 {
+            color: #8b0000; }
+      .akrpg.sheet.actor.character .sheet-body .misc .savingThrows {
+        padding: 2px; }
+        .akrpg.sheet.actor.character .sheet-body .misc .savingThrows .savingThrow {
+          padding-bottom: 2px;
+          align-items: center;
+          flex-grow: unset;
+          width: 90%; }
+          .akrpg.sheet.actor.character .sheet-body .misc .savingThrows .savingThrow .total {
+            font-weight: 700; }
+      .akrpg.sheet.actor.character .sheet-body .misc .character-options {
+        display: flex;
+        flex-direction: column;
+        padding: 2px; }
+        .akrpg.sheet.actor.character .sheet-body .misc .character-options .signature-ability-container {
+          display: flex;
+          flex-direction: row;
+          align-items: center; }
+        .akrpg.sheet.actor.character .sheet-body .misc .character-options .bab-container {
+          display: flex;
+          align-items: center; }
+          .akrpg.sheet.actor.character .sheet-body .misc .character-options .bab-container input {
+            text-align: right; }
 
 .akrpg {
   /**
@@ -180,6 +194,18 @@
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap; }
+  .akrpg .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #4b4a44;
+    margin-bottom: 2px;
+    border-bottom: solid 2px #b8b7b2;
+    flex-grow: unset; }
+  .akrpg .subsection-title {
+    font-weight: 700;
+    font-size: 14px;
+    cursor: pointer;
+    flex-grow: 1; }
   .akrpg h1,
   .akrpg h2,
   .akrpg h3,

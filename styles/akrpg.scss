@@ -18,6 +18,22 @@
         flex-wrap: nowrap;
     }
 
+    .section-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: $text-light;
+        margin-bottom: 2px;
+        border-bottom: solid 2px $grey;
+        flex-grow: unset;
+    }
+
+    .subsection-title {
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+        flex-grow: 1;
+    }
+
     /**
 * Generic Styling
 */

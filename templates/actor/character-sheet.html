@@ -75,7 +75,7 @@
         </div>
     </section>
 
-    <nav class="sheet-navigation tabs">
+    <nav class="sheet-navigation tabs" data-group="primary">
         <a class="item active" data-tab="attributes">Attributes</a>
         <a class="item" data-tab="inventory">Inventory</a>
         <a class="item" data-tab="weapons">Weapons</a>
@@ -84,7 +84,8 @@
     </nav>
 
     <section class="sheet-body">
-        <div class="tab attributes flexrow" data-group="primary" data-tab="attributes">
+        <div class="tab attributes" data-group="primary" data-tab="attributes">
+            <div class="flexrow">
             {{!-- Ability Scores --}}
             <div class="abilityScores flexcol">
                 {{#each data.abilityScores as |ability id|}}
@@ -122,12 +123,17 @@
             </div>
 
             {{!-- Third Column --}}
-            <div class="misc flexcol">
+            <div class="misc">
+                <div class="death-tracker">
+                    <h4 class="section-title">Death Saves</h4>
+                    <input type="text" class="{{data.deathSaves.value}}" name="data.deathSaves.value" value="{{data.deathSaves.value}}" />
+                </div>
+
                 <div class="savingThrows flexcol">
                     <h4 class="section-title">Saving  Throws</h4>
                     {{#each data.savingThrows as |savingThrow st|}}
                     <div class="savingThrow flexrow" data-savingThrow="{{st}}">
-                        <h6 class="savingThrow-name">{{savingThrow.label}}</h6>
+                        <h6 class="savingThrow-name subsection-title">{{savingThrow.label}}</h6>
                         <span class="savingThrow-baseAbility-container">
                             <input type="hidden" name="data.savingThrows.{{st}}.baseAbility" value="{{savingThrow.baseAbility}}" />
                             (<span class="savingThrow-baseAbility">{{savingThrow.baseAbility}}</span>)
@@ -139,7 +145,46 @@
                     </div>
                     {{/each}}
                 </div>
+
+                <div class="character-options">
+                    <h4 class="section-title">Character Options</h4>
+                    <div class="signature-ability-container">
+                        <h6 class="subsection-title">Signature Ability</h6>
+                        <select name="data.attributes.signatureAbility">
+                            {{#select data.attributes.signatureAbility}}
+                                <option value="str">Strength</option>
+                                <option value="dex">Dexterity</option>
+                                <option value="con">Constitution</option>
+                                <option value="int">Intelligence</option>
+                                <option value="wis">Wisdom</option>
+                                <option value="cha">Charisma</option>
+                            {{/select}}
+                        </select>
+                    </div>
+                    <div class="bab-container">
+                        <h6 class="subsection-title">Base Attack Bonus</h6>
+                        <input type="text" name="data.baseAttackBonus.value" value="{{numberFormat data.baseAttackBonus.value decimals=0 sign=true}}" placeholder="0" />
+                    </div>
+                </div>
             </div>
+            </div>
+
+        </div>
+
+        <div class="tab inventory" data-group="primary" data-tab="inventory">
+            inventory
+        </div>
+
+        <div class="tab weapons" data-group="primary" data-tab="weapons">
+            weapons
+        </div>
+
+        <div class="tab spellbook" data-group="primary" data-tab="spellbook">
+            spellbook
+        </div>
+
+        <div class="tab notes" data-group="primary" data-tab="notes">
+            {{editor content=data.notes target="data.notes" button=true editable=true}}
         </div>
     </section>
 </form> 

@@ -68,7 +68,6 @@
         }
 
         .skills {
-            margin: 0 4px;
             border: solid 2px $grey;
             border-left: none;
             padding: 2px;
@@ -121,6 +120,10 @@
                     cursor: pointer;
                 }
 
+                .skill-ability-contianer {
+                    width: 35px;
+                }
+
                 .skill-additionalModifier {
                     width: 25px;
                 }
@@ -133,32 +136,57 @@
             }
         }
 
-        .savingThrows {
-            padding: 2px;
+        .misc {
+            display: flex;
+            flex-direction: column;
 
-            h4 {
-                font-size: 18px;
-                font-weight: 700;
-                color: $text-light;
-                margin-bottom: 2px;
-                border-bottom: solid 2px $grey;
-                flex-grow: unset;
+            .death-tracker {
+                padding: 4px 0;
+
+                input {
+                    margin: 8px;
+                    font-size: 28px;
+                    text-align: center;
+
+                    &.5 {
+                        color: $red;
+                    }
+                }
             }
 
-            .savingThrow {
-                padding-bottom: 2px;
-                align-items: center;
-                flex-grow: unset;
-                width: 90%;
+            .savingThrows {
+                padding: 2px;
 
-                h6 {
-                    font-weight: 700;
-                    font-size: 14px;
-                    cursor: pointer;
+                .savingThrow {
+                    padding-bottom: 2px;
+                    align-items: center;
+                    flex-grow: unset;
+                    width: 90%;
+
+                    .total {
+                        font-weight: 700;
+                    }
+                }
+            }
+
+            .character-options {
+                display: flex;
+                flex-direction: column;
+                padding: 2px;
+
+                .signature-ability-container {
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
                 }
 
-                .total {
-                    font-weight: 700;
+                .bab-container {
+                    display: flex;
+                    align-items: center;
+
+                    input {
+                        text-align: right;
+                    }
                 }
             }
         }
