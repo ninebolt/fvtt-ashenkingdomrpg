@@ -14,13 +14,6 @@
         "system": "akrpg",
         "path": "./packs/spells.db",
         "entity": "Item"
-      },
-      {
-        "name": "folders",
-        "label": "Folders",
-        "system": "akrpg",
-        "path": "./packs/folders.db",
-        "entity": "Item"
       }
     ],
     "socket": false,

@@ -98,4 +98,5 @@ AKRPG.damageTypes = {
     radiant: "Radiant",
     necrotic: "Necrotic",
     void: "Void",
+    healing: "Healing",
 };

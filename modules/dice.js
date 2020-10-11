@@ -19,3 +19,7 @@ export async function d20Roll({ parts = [], data = {}, flavor }) {
 
     return roll;
 }
+
+export async function damageRoll({parts = [], data = {}, flavor }) {
+    return d20Roll({parts, data, flavor })
+}
