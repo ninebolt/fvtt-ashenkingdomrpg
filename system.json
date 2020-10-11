@@ -7,7 +7,22 @@
     "scripts": [],
     "esmodules": ["akrpg.js"],
     "styles": ["akrpg.css"],
-    "packs": [],
+    "packs": [
+      {
+        "name": "spells",
+        "label": "Spells",
+        "system": "akrpg",
+        "path": "./packs/spells.db",
+        "entity": "Item"
+      },
+      {
+        "name": "folders",
+        "label": "Folders",
+        "system": "akrpg",
+        "path": "./packs/folders.db",
+        "entity": "Item"
+      }
+    ],
     "spcket": false,
     "gridDistance": 5,
     "gridUnits": "ft",
