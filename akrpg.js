@@ -1,8 +1,12 @@
 import { AKRPG } from "./modules/config.js";
 
+// Actors
 import AKRPGActor from "./modules/actor/actor.js";
-import AKRPGItem from "./modules/item/item.js";
 import AKRPGActorSheetCharacter from "./modules/actor/sheets/character.js";
+
+// Items
+import AKRPGItem from "./modules/item/item.js";
+import AKRPGItemSheetSpell from "./modules/item/sheets/spell.js"
 
 Hooks.once("init", async function () {
     console.log("AKRPG | System Loading");
@@ -10,6 +14,7 @@ Hooks.once("init", async function () {
     game.akrpg = {
         application: {
             AKRPGActorSheetCharacter,
+            AKRPGItemSheetSpell,
         },
         entities: {
             AKRPGActor,
@@ -18,6 +23,7 @@ Hooks.once("init", async function () {
     };
 
     CONFIG.Actor.entityClass = AKRPGActor;
+    CONFIG.Item.entityClass = AKRPGItem;
     CONFIG.AKRPG = AKRPG;
 
     Actors.unregisterSheet("core", ActorSheet);
@@ -25,4 +31,9 @@ Hooks.once("init", async function () {
         types: ["character"],
         makeDefault: true,
     });
+    Items.unregisterSheet("core", ItemSheet);
+    Items.registerSheet("akrpg", AKRPGItemSheetSpell, {
+        types: ["spell"],
+        makeDefault: true,
+    })
 });

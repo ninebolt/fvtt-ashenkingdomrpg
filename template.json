@@ -280,6 +280,32 @@
                 "heavy": false,
                 "reload": false
             }
+        },
+        "spell": {
+            "templates": ["itemDescription"],
+            "arcanumCost": 0,
+            "area": "",
+            "castTime": "",
+            "components": {
+                "verbal": false,
+                "somatic": false,
+                "material": false,
+                "cost": null
+            },
+            "concentration": false,
+            "domain": "",
+            "duration": "",
+            "range": "",
+            "save": {
+                "ability": "",
+                "dc": null
+            },
+            "heighten": {
+                "formula": ""
+            },
+            "damage": {
+                "parts": []
+            }
         }
     }
 }
