@@ -283,19 +283,29 @@
         },
         "spell": {
             "templates": ["itemDescription"],
-            "arcanumCost": 1,
+            "arcanumCost": 0,
             "area": "",
-            "castTime": "Action",
+            "castTime": "",
             "components": {
                 "verbal": false,
                 "somatic": false,
                 "material": false,
-                "cost": ""
+                "cost": null
             },
             "concentration": false,
-            "domain": "sky",
-            "duration": "1 minute",
-            "range": "touch"
+            "domain": "",
+            "duration": "",
+            "range": "",
+            "save": {
+                "ability": "",
+                "dc": null
+            },
+            "heighten": {
+                "formula": ""
+            },
+            "damage": {
+                "parts": []
+            }
         }
     }
 }
