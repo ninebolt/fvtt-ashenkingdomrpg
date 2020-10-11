@@ -179,6 +179,57 @@
           .akrpg.sheet.actor.character .sheet-body .misc .character-options .bab-container input {
             text-align: right; }
 
+/** Colors */
+.akrpg.sheet.item .window-content {
+  padding: 0; }
+
+.akrpg.sheet.item .sheet-header {
+  display: flex;
+  flex-grow: unset;
+  height: 100px;
+  border-bottom: solid 2px #b8b7b2; }
+  .akrpg.sheet.item .sheet-header .profile {
+    min-width: 100px;
+    max-width: 100px;
+    height: 100px;
+    margin: 0;
+    border: none;
+    border-right: solid 2px #b8b7b2; }
+  .akrpg.sheet.item .sheet-header .major-info {
+    display: flex;
+    flex-direction: column;
+    padding-left: 2px;
+    border-top: solid 2px #b8b7b2; }
+    .akrpg.sheet.item .sheet-header .major-info .name input {
+      margin: 0; }
+    .akrpg.sheet.item .sheet-header .major-info .info {
+      display: flex;
+      align-items: center;
+      flex-grow: 1; }
+      .akrpg.sheet.item .sheet-header .major-info .info .item-rarity,
+      .akrpg.sheet.item .sheet-header .major-info .info .item-type {
+        color: #4b4a44; }
+
+.akrpg.sheet.item .equipment-details .sidebar {
+  padding: 4px;
+  max-width: 150px;
+  border-right: solid 2px #b8b7b2; }
+  .akrpg.sheet.item .equipment-details .sidebar .sidebar-item {
+    display: flex;
+    align-items: center; }
+    .akrpg.sheet.item .equipment-details .sidebar .sidebar-item label {
+      line-height: 20px;
+      flex: 2;
+      color: #000000;
+      font-weight: bold; }
+    .akrpg.sheet.item .equipment-details .sidebar .sidebar-item input {
+      text-align: right; }
+
+.akrpg.sheet.item .equipment-details .description {
+  padding: 4px; }
+  .akrpg.sheet.item .equipment-details .description .editor .tox {
+    height: 450px !important; }
+
 .akrpg {
   /**
 * Default classes
@@ -206,6 +257,10 @@
     font-size: 14px;
     cursor: pointer;
     flex-grow: 1; }
+  .akrpg .sheet .editor {
+    height: 100%; }
+    .akrpg .sheet .editor .tox-toolbar-overlord, .akrpg .sheet .editor .tox-toolbar__primary {
+      background: none; }
   .akrpg h1,
   .akrpg h2,
   .akrpg h3,

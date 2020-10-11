@@ -253,7 +253,9 @@
         "types": ["weapon", "armor", "equipment", "spell"],
         "templates": {
             "itemDescription": {
-                "description": ""
+                "description": {
+                    "value": ""
+                }
             },
             "physicalItem": {
                 "quantity": 1,
@@ -280,6 +282,9 @@
                 "heavy": false,
                 "reload": false
             }
+        },
+        "equipment": {
+            "templates": ["itemDescription", "physicalItem"]
         }
     }
 }

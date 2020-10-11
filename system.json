@@ -2,7 +2,7 @@
     "name": "akrpg",
     "title": "Ashen Kingdoms RPG",
     "description": "A system for playing the Ashen Kingdoms Roleplaying Game in FoundryVTT.",
-    "version": 0.7,
+    "version": 0.9,
     "author": "Ash",
     "scripts": [],
     "esmodules": ["akrpg.js"],

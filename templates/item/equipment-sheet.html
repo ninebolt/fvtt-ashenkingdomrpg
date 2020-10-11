@@ -1,0 +1,56 @@
+<form class="{{cssClass}} flexcol" autocomplete="off">
+    <header class="sheet-header">
+        <img
+            class="profile"
+            src="{{item.img}}"
+            title="{{item.name}}"
+            data-edit="img"
+        />
+
+        <div class="major-info">
+            <h1 class="name">
+                <input
+                    name="name"
+                    type="text"
+                    value="{{item.name}}"
+                    placeholder="Item"
+                />
+            </h1>
+
+            <div class="info">
+                <h4 class="item-rarity">
+                    <input
+                        type="text"
+                        name="data.rarity"
+                        value="{{data.rarity}}"
+                        placeholder="rarity"
+                    />
+                </h4>
+                <h4 class="item-type">{{ itemType }}</h4>
+            </div>
+        </div>
+    </header>
+
+    <section class="equipment-details flexrow">
+        
+        <div class="sidebar">
+            <div class="sidebar-item">
+                <label>Quantity</label>
+                <input type="text" name="data.quantity" value="{{data.quantity}}" plaaceholder="1" />
+            </div>
+            <div class="sidebar-item">
+                <label>Bulk</label>
+                <input type="text" name="data.bulk" value="{{data.bulk}}" plaaceholder="1" />
+            </div>
+            <div class="sidebar-item">
+                <label>Price</label>
+                <input type="text" name="data.price" value="{{data.price}}" plaaceholder="1cp" />
+            </div>
+        </div>
+        
+        <div class="description">
+            {{ editor content=data.description.value target="data.description.value" button=true owner=owner editable=editable }}
+        </div>
+
+    </section>
+</form>

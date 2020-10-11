@@ -1,6 +1,7 @@
 @import "variables";
 @import "actor";
 @import "character";
+@import "item";
 
 .akrpg {
     /**
@@ -32,6 +33,17 @@
         font-size: 14px;
         cursor: pointer;
         flex-grow: 1;
+    }
+
+    // Editor Stylings
+    .sheet {
+        .editor {
+            height: 100%;
+
+            .tox-toolbar-overlord, .tox-toolbar__primary {
+                background: none;
+            }
+        }
     }
 
     /**
