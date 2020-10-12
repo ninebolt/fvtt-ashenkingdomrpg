@@ -39,22 +39,11 @@ export default class AKRPGItemSheet extends ItemSheet {
     }
 
     /**
-     * Event Listeners
-     */
-    activateListeners(html) {
-        html.find(".spell-name").click(this._rollDamage.bind(this));
-
-        super.activateListeners(html);
-    }
-
-    /**
      * @private
-     * Rolls spell damage when title is clicked
+     * Rolls spell damage when called
      */
     _rollDamage(event) {
         event.preventDefault();
-        const item = event;
-
         this.item.rollDamage()
     }
 }

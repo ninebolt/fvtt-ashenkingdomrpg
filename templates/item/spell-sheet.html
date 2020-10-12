@@ -7,8 +7,6 @@
         <div class="flexrow spell-attributes">
           <label>Arcanum Cost - {{data.arcanumCost}}</label>
           <label>Domain - {{data.domain}}</label>
-        </div>
-        <div class="flexrow spell-attributes">
           {{#if data.concentration}}
             <label>Concentration - {{data.concentration}}</label>
           {{/if}}
@@ -17,6 +15,8 @@
               <label>{{label}}</label>
             {{/if}}
           {{/each}}
+          <label>Range - {{data.range}}</label>
+          <label>Duration - {{data.duration}}</label>
         </div>
     </header>
 
@@ -25,5 +25,19 @@
         <div class="flexrow">
             <div id="description">{{{data.description}}}</div>
         </div>
+    </section>
+    <section class="sheet-footer">
+      <div class="flexrow cast-bar">
+        <button class="spellcast">Cast Spell</button>
+        {{#if data.heighten.formula}}
+            <label>Heighten - {{data.heighten.formula}}</label>
+        {{/if}}
+        {{#if data.damage.parts.length}}
+            <label>Parts:</label>
+            {{#each data.damage.parts}}
+                <label>{{this}}</label>
+            {{/each}}
+        {{/if}}
+      </div>
     </section>
 </form>
