@@ -179,11 +179,11 @@
         </div>
 
         <div class="tab spellbook" data-group="primary" data-tab="spellbook">
-            Just use the website.
+            {{> "systems/akrpg/templates/actor/partials/spellbook-partial.html" sections=spellbook }}
         </div>
 
         <div class="tab notes" data-group="primary" data-tab="notes">
-            {{editor content=data.notes target="data.notes" button=true editable=true}}
+            {{editor content=data.notes.value target="data.notes.value" button=true editable=true}}
         </div>
     </section>
 </form> 

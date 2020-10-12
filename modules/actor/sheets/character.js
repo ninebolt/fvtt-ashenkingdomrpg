@@ -41,6 +41,9 @@ export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
         if (!data) return false;
 
         super._onDrop(event);
+
+        // Recalculates the encumbrance
+        this._prepareItems(this.getData());
     }
 
     _prepareItems(data) {
@@ -63,20 +66,25 @@ export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
             this.actor.data.data.carryingCapacity.value += i.data.totalWeight;
         }
 
+        // Rounds down the current weight carried
+        this.actor.data.data.carryingCapacity.value = Math.floor(this.actor.data.data.carryingCapacity.value);
+        this.actor.updateCurrentWeight(this.actor.data.data.carryingCapacity.value);
         return inventory;
     }
 
     _calculateWeight(item) {
         let totalWeight = 0;
         let convertedWeight = parseInt(item.data.bulk);
+
+        console.log('DOING IT');
+        console.log('CONVERTED WEIGHT', convertedWeight);
         
         if (!Number.isNaN(convertedWeight)) {
             totalWeight = item.data.bulk * item.data.quantity;
-        } else if (item.bulk === 'L') {
+        } else if (item.data.bulk === 'L') {
+            console.log('L');
             totalWeight = 0.1 * item.data.quantity;
         }
-
-        totalWeight = Math.floor(totalWeight);
         return totalWeight;
     }
 
@@ -98,6 +106,8 @@ export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
             this._updateSkillProficiencyAbility.bind(this)
         );
 
+        html.find('.roll-strain').click(this._rollStrainCheck.bind(this));
+
         super.activateListeners(html);
     }
 
@@ -115,6 +125,10 @@ export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
         this._onSubmit(event);
     }
 
+    /**
+     * Updates the ability tied to each skill proficiency
+     * @param {Event} event The click event
+     */
     _updateSkillProficiencyAbility(event) {
         event.preventDefault();
         const abilities = ["str", "dex", "con", "int", "wis", "cha"];
@@ -129,5 +143,10 @@ export default class AKRPGActorSheetCharacter extends AKRPGActorSheet {
         field.val(abilities[ind]);
 
         this._onSubmit(event);
+    }
+
+    _rollStrainCheck(event) {
+        event.preventDefault();
+        this.actor.rollSavingThrow('fort', 'Strain')
     }
 }

@@ -31,7 +31,7 @@ Hooks.once("init", async function () {
 
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("akrpg", AKRPGItemSheetEquipment, {
-        types: ["equipment"],
+        types: ["equipment", "weapon", "armor"],
         makeDefault: true,
     });
 

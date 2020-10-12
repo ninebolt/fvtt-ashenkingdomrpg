@@ -2,7 +2,7 @@
     "name": "akrpg",
     "title": "Ashen Kingdoms RPG",
     "description": "A system for playing the Ashen Kingdoms Roleplaying Game in FoundryVTT.",
-    "version": 0.11,
+    "version": 0.12,
     "author": "Ash",
     "scripts": [],
     "esmodules": ["akrpg.js"],
@@ -15,7 +15,7 @@
     "secondaryTokenAttribute": null,
     "minimumCoreVersion": "0.7.3",
     "compatibleCoreVersion": "0.7.3",
-    "url": "https://github.com/ninebolt/fvtt-ashenkingdomsrpg/",
+    "url": "https://github.com/ninebolt/fvtt-ashenkingdomrpg",
     "manifest": "https://raw.githubusercontent.com/ninebolt/fvtt-ashenkingdomrpg/master/system.json",
     "download": "https://github.com/ninebolt/fvtt-ashenkingdomrpg/archive/master.zip"
 }

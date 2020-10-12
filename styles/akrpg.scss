@@ -67,8 +67,9 @@
     }
 
     // Editor Stylings
-    .sheet {
+    &.sheet {
         .editor {
+            min-height: 200px;
             height: 100%;
 
             .tox-toolbar-overlord, .tox-toolbar__primary {

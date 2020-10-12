@@ -21,7 +21,8 @@ export default class AKRPGItemSheet extends ItemSheet {
     /** @override */
     get template() {
         const path = "systems/akrpg/templates/item/";
-        return `${path}${this.item.data.type}-sheet.html`;
+        // return `${path}${this.item.data.type}-sheet.html`;
+        return `${path}equipment-sheet.html`
     }
 
     /** @override */

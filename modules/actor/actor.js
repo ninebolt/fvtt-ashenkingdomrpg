@@ -50,6 +50,15 @@ export default class AKRPGActor extends Actor {
     }
 
     /**
+     * Updates the current weight using the update function
+     * @param {number} weight Weight to be set
+     */
+    updateCurrentWeight(weight) {
+        const data = { "data.carryingCapacity.value": weight };
+        return super.update(data, {});
+    }
+
+    /**
      * @private
      * Calculates the ability score modifiers
      */

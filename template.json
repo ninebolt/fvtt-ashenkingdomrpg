@@ -59,7 +59,7 @@
                 "deathSaves": {
                     "value": 0
                 },
-                "notes": "",
+                "notes": { "value": ""},
                 "size": "medium",
                 "speed": "30 ft",
                 "armorClass": 10,
