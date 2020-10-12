@@ -18,7 +18,7 @@ export default class AKRPGActor extends Actor {
         this._calculateMaximumSpellStrain(data);
         this._calculateSpellAttackBonus(data);
         this._calculateInitiative(data);
-        console.log("Derived Data", data);
+        this._calculateCarryingCapacity(data);
     }
 
     /**
@@ -145,5 +145,15 @@ export default class AKRPGActor extends Actor {
         data.initiative.value =
             +data.abilityScores["dex"].mod +
             +data.initiative.additionalModifier;
+    }
+
+    /**
+     * @private
+     * Calculate carrying capacity
+     */
+    _calculateCarryingCapacity(data) {
+        if (!data.carryingCapacity.additionalModifier) data.carryingCapacity.additionalModifier = 0;
+        data.carryingCapacity.encumbrance =  5 + +data.carryingCapacity.additionalModifier;
+        data.carryingCapacity.max = 10 + +data.carryingCapacity.additionalModifier;
     }
 }

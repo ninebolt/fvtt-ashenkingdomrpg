@@ -1,0 +1,63 @@
+@import "variables";
+
+.akrpg.sheet.item {
+    .window-content {
+        padding: 0;
+    }
+
+    .sheet-header {
+        display: flex;
+        flex-grow: unset;
+        height: 100px;
+        border-bottom: solid 2px $grey;
+
+        .profile {
+            min-width: 100px;
+            max-width: 100px;
+            height: 100px;
+
+            margin: 0;
+            border: none;
+
+            border-right: solid 2px $grey;
+        }
+
+        .major-info {
+            display: flex;
+            flex-direction: column;
+            
+            padding-left: 2px;
+            border-top: solid 2px $grey;
+
+            .name {
+                input {
+                    margin: 0;
+                }
+            }
+
+            .info {
+                display: flex;
+                align-items: center;
+                flex-grow: 1;
+
+                .item-rarity,
+                .item-type {
+                    color: $text-light;
+                }
+            }
+        }
+    }
+
+    .equipment-details {
+
+        .description {
+            padding: 4px; 
+            .editor {
+                .tox {
+                    height: 450px !important;
+                }
+            }
+        }
+
+    }
+}

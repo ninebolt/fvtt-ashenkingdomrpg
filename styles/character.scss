@@ -65,130 +65,138 @@
                     }
                 }
             }
-        }
 
-        .skills {
+            .skills {
             border: solid 2px $grey;
             border-left: none;
             padding: 2px;
 
-            .skill {
-                display: flex;
-                flex-direction: row;
-                flex-wrap: nowrap;
-                align-items: center;
-                margin-bottom: 2px;
-
-                .proficiency-container {
+                .skill {
                     display: flex;
+                    flex-direction: row;
                     flex-wrap: nowrap;
-                    margin-right: 2px;
+                    align-items: center;
+                    margin-bottom: 2px;
 
-                    .proficiency-box {
-                        cursor: pointer;
-                        border: solid 1px $grey;
-                        border-right: none;
-                        width: 20px;
-                        height: 20px;
+                    .proficiency-container {
                         display: flex;
-                        align-items: center;
-                        justify-content: center;
+                        flex-wrap: nowrap;
+                        margin-right: 2px;
 
-                        &:last-child {
-                            border-right: solid 1px $grey;
+                        .proficiency-box {
+                            cursor: pointer;
+                            border: solid 1px $grey;
+                            border-right: none;
+                            width: 20px;
+                            height: 20px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+
+                            &:last-child {
+                                border-right: solid 1px $grey;
+                            }
+
+                            &.unknown.proficiency-unknown,
+                            &.known.proficiency-known,
+                            &.trained.proficiency-trained,
+                            &.expert.proficiency-expert {
+                                color: $white;
+                                background-color: $text-dark;
+                            }
                         }
+                    }
 
-                        &.unknown.proficiency-unknown,
-                        &.known.proficiency-known,
-                        &.trained.proficiency-trained,
-                        &.expert.proficiency-expert {
-                            color: $white;
-                            background-color: $text-dark;
+                    .skill-name {
+                        font-weight: 700;
+                        margin-right: 4px;
+                        font-size: 14px;
+                        width: 120px;
+                        cursor: pointer;
+                    }
+
+                    .skill-proficiency {
+                        cursor: pointer;
+                    }
+
+                    .skill-ability-contianer {
+                        width: 35px;
+                    }
+
+                    .skill-additionalModifier {
+                        width: 25px;
+                    }
+
+                    .skill-total {
+                        font-weight: 700;
+                        width: 25px;
+                        text-align: center;
+                    }
+                }
+            }
+
+            .misc {
+                display: flex;
+                flex-direction: column;
+
+                .death-tracker {
+                    padding: 4px 0;
+
+                    input {
+                        margin: 8px;
+                        font-size: 28px;
+                        text-align: center;
+
+                        &.5 {
+                            color: $red;
                         }
                     }
                 }
 
-                .skill-name {
-                    font-weight: 700;
-                    margin-right: 4px;
-                    font-size: 14px;
-                    width: 120px;
-                    cursor: pointer;
+                .savingThrows {
+                    padding: 2px;
+
+                    .savingThrow {
+                        padding-bottom: 2px;
+                        align-items: center;
+                        flex-grow: unset;
+                        width: 90%;
+
+                        .total {
+                            font-weight: 700;
+                        }
+                    }
                 }
 
-                .skill-proficiency {
-                    cursor: pointer;
-                }
+                .character-options {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 2px;
 
-                .skill-ability-contianer {
-                    width: 35px;
-                }
+                    .signature-ability-container {
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                    }
 
-                .skill-additionalModifier {
-                    width: 25px;
-                }
+                    .bab-container, .encumbrance-modifier {
+                        display: flex;
+                        align-items: center;
 
-                .skill-total {
-                    font-weight: 700;
-                    width: 25px;
-                    text-align: center;
+                        h6 {
+                            min-width: 250px;
+                        }
+
+                        input {
+                            text-align: right;
+                        }
+                    }
                 }
             }
         }
 
-        .misc {
-            display: flex;
-            flex-direction: column;
-
-            .death-tracker {
-                padding: 4px 0;
-
-                input {
-                    margin: 8px;
-                    font-size: 28px;
-                    text-align: center;
-
-                    &.5 {
-                        color: $red;
-                    }
-                }
-            }
-
-            .savingThrows {
-                padding: 2px;
-
-                .savingThrow {
-                    padding-bottom: 2px;
-                    align-items: center;
-                    flex-grow: unset;
-                    width: 90%;
-
-                    .total {
-                        font-weight: 700;
-                    }
-                }
-            }
-
-            .character-options {
-                display: flex;
-                flex-direction: column;
-                padding: 2px;
-
-                .signature-ability-container {
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                }
-
-                .bab-container {
-                    display: flex;
-                    align-items: center;
-
-                    input {
-                        text-align: right;
-                    }
-                }
-            }
+        .inventory {
+            border-top: solid 2px $grey;
         }
     }
 }

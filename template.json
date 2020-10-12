@@ -209,8 +209,9 @@
             "equipment": {
                 "carryingCapacity": {
                     "value": 0,
-                    "encumberance": 5,
-                    "max": 10
+                    "encumbrance": 5,
+                    "max": 10,
+                    "additionalModifier": 0
                 },
                 "currency": {
                     "copper": 0,
@@ -253,7 +254,9 @@
         "types": ["weapon", "armor", "equipment", "spell"],
         "templates": {
             "itemDescription": {
-                "description": ""
+                "description": {
+                    "value": ""
+                }
             },
             "physicalItem": {
                 "quantity": 1,
@@ -306,6 +309,9 @@
             "damage": {
                 "parts": []
             }
+        },
+        "equipment": {
+            "templates": ["itemDescription", "physicalItem"]
         }
     }
 }

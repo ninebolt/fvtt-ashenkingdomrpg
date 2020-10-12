@@ -1,0 +1,62 @@
+
+<div class="inventory-container">
+{{!-- Currency and Encumbrance --}}
+<div class="sidebar">
+    <h4 class="section-title">Gold</h4>
+    <div class="sidebar-item">
+        <label>Platinum</label>
+        <input type="text" name="data.currency.platinum" value="{{data.currency.platinum}}" placeholder="0" />
+    </div>
+    <div class="sidebar-item">
+        <label>Gold</label>
+        <input type="text" name="data.currency.gold" value="{{data.currency.gold}}" placeholder="0" />
+    </div>
+    <div class="sidebar-item">
+        <label>Silver</label>
+        <input type="text" name="data.currency.silver" value="{{data.currency.silver}}" placeholder="0" />
+    </div>
+    <div class="sidebar-item">
+        <label>Copper</label>
+        <input type="text" name="data.currency.copper" value="{{data.currency.copper}}" placeholder="0" />
+    </div>
+
+    <h4 class="section-title">Carrying Capacity</h4>
+    <div class="sidebar-item">
+        <label>Current Enc.</label>
+        <span>{{data.carryingCapacity.value}}</span>
+    </div>
+    <div class="spacer"></div>
+    <div class="sidebar-item">
+        <label>Encumbrance</label>
+        <span>{{data.carryingCapacity.encumbrance}}</span>
+    </div>
+    <div class="sidebar-item">
+        <label>Max Enc.</label>
+        <span>{{data.carryingCapacity.max}}</span>
+    </div>
+</div>
+
+{{!-- Items List --}}
+<div class="items-list">
+    {{#each inventory as |inventory id|}}
+    <div class="item-group" data-item-type="{{id}}">
+        <h4 class="section-title">
+            <span>{{inventory.label}}</span>
+            <a class="icon clickable item-create"><i class="fas fa-plus"></i></a>
+        </h4>
+        {{#each inventory.items as |item iid|}}
+        <div class="item" data-item-id="{{item._id}}">
+            <span class="item-info clickable">
+                <span class="name">{{item.name}}</span>
+                <span class="quantity">x{{item.data.quantity}}</span>
+            </span>
+            <span class="icon">
+                <a class="item-edit"><i class="fas fa-edit"></i></a>
+                <a class="item-delete"><i class="fas fa-trash"></i></a>
+            </span>
+        </div>
+        {{/each}}
+    </div>
+    {{/each}}
+</div>
+</div>

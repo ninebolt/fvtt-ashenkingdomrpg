@@ -7,18 +7,17 @@ export default class AKRPGItemSheet extends ItemSheet {
 
     /** @override */
     static get defaultOptions() {
-      // TODO
-      return mergeObject(super.defaultOptions, {
-          scrollY: [
-          ],
-          tabs: [
-              {
-                  navSelector: ".tabs",
-                  contentSelector: ".sheet-body",
-                  initial: "description",
-              },
-          ],
-      });
+        return mergeObject(super.defaultOptions, {
+            resizable: true,
+            scrollY: [".tab.details"],
+            tabs: [
+                {
+                    navSelector: ".tabs",
+                    contentSelector: ".sheet-body",
+                    initial: "description",
+                },
+            ],
+        });
     }
 
     /** @override */
@@ -26,14 +25,13 @@ export default class AKRPGItemSheet extends ItemSheet {
         return `systems/akrpg/templates/item/${this.item.data.type}-sheet.html`;
     }
 
+    /** @override */
     getData() {
-        const data = {
-            ...super.getData(),
-            config: CONFIG.AKRPG,
-        };
+        const data = super.getData();
+        console.log("Item Data", data);
 
-        //TODO
-        console.log("DATA", data);
+        data.itemType = data.item.type.toLowerCase();
+
         return data;
     }
 
