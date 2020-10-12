@@ -1,0 +1,44 @@
+@import 'variables';
+
+.inventory-container {
+    display: flex;
+    flex-direction: row;
+    padding: 0 4px 4px 4px;
+
+    .items-list {
+        flex-grow: 1;
+
+        .item-group {
+            display: flex;
+            flex-direction: column;
+
+            .section-title {
+                display: flex;
+                flex-direction: row;
+
+                padding: 0 4px;
+            }
+
+            .item {
+                border-bottom: solid 1px $light-grey;
+                padding: 2px 4px;
+                display: flex;
+                flex-wrap: nowrap;
+
+                .quantity {
+                    margin-left: 4px;
+                    color: $text-light;
+                }
+            }
+        }
+
+        .icon {
+            margin-left: auto;
+            color: $text-light;
+        }
+
+        .spacer {
+            width: 8px;
+        }
+    }
+}

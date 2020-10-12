@@ -101,21 +101,21 @@
         border-right: none; }
         .akrpg.sheet.actor.character .sheet-body .attributes .abilityScores .abilityScore:first-child {
           border-top: solid 2px #b8b7b2; }
-    .akrpg.sheet.actor.character .sheet-body .skills {
+    .akrpg.sheet.actor.character .sheet-body .attributes .skills {
       border: solid 2px #b8b7b2;
       border-left: none;
       padding: 2px; }
-      .akrpg.sheet.actor.character .sheet-body .skills .skill {
+      .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill {
         display: flex;
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
         margin-bottom: 2px; }
-        .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container {
+        .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .proficiency-container {
           display: flex;
           flex-wrap: nowrap;
           margin-right: 2px; }
-          .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box {
+          .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .proficiency-container .proficiency-box {
             cursor: pointer;
             border: solid 1px #b8b7b2;
             border-right: none;
@@ -124,60 +124,92 @@
             display: flex;
             align-items: center;
             justify-content: center; }
-            .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box:last-child {
+            .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .proficiency-container .proficiency-box:last-child {
               border-right: solid 1px #b8b7b2; }
-            .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box.unknown.proficiency-unknown, .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box.known.proficiency-known, .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box.trained.proficiency-trained, .akrpg.sheet.actor.character .sheet-body .skills .skill .proficiency-container .proficiency-box.expert.proficiency-expert {
+            .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .proficiency-container .proficiency-box.unknown.proficiency-unknown, .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .proficiency-container .proficiency-box.known.proficiency-known, .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .proficiency-container .proficiency-box.trained.proficiency-trained, .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .proficiency-container .proficiency-box.expert.proficiency-expert {
               color: #ffffff;
               background-color: #000000; }
-        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-name {
+        .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .skill-name {
           font-weight: 700;
           margin-right: 4px;
           font-size: 14px;
           width: 120px;
           cursor: pointer; }
-        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-proficiency {
+        .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .skill-proficiency {
           cursor: pointer; }
-        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-ability-contianer {
+        .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .skill-ability-contianer {
           width: 35px; }
-        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-additionalModifier {
+        .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .skill-additionalModifier {
           width: 25px; }
-        .akrpg.sheet.actor.character .sheet-body .skills .skill .skill-total {
+        .akrpg.sheet.actor.character .sheet-body .attributes .skills .skill .skill-total {
           font-weight: 700;
           width: 25px;
           text-align: center; }
-    .akrpg.sheet.actor.character .sheet-body .misc {
+    .akrpg.sheet.actor.character .sheet-body .attributes .misc {
       display: flex;
       flex-direction: column; }
-      .akrpg.sheet.actor.character .sheet-body .misc .death-tracker {
+      .akrpg.sheet.actor.character .sheet-body .attributes .misc .death-tracker {
         padding: 4px 0; }
-        .akrpg.sheet.actor.character .sheet-body .misc .death-tracker input {
+        .akrpg.sheet.actor.character .sheet-body .attributes .misc .death-tracker input {
           margin: 8px;
           font-size: 28px;
           text-align: center; }
-          .akrpg.sheet.actor.character .sheet-body .misc .death-tracker input.5 {
+          .akrpg.sheet.actor.character .sheet-body .attributes .misc .death-tracker input.5 {
             color: #8b0000; }
-      .akrpg.sheet.actor.character .sheet-body .misc .savingThrows {
+      .akrpg.sheet.actor.character .sheet-body .attributes .misc .savingThrows {
         padding: 2px; }
-        .akrpg.sheet.actor.character .sheet-body .misc .savingThrows .savingThrow {
+        .akrpg.sheet.actor.character .sheet-body .attributes .misc .savingThrows .savingThrow {
           padding-bottom: 2px;
           align-items: center;
           flex-grow: unset;
           width: 90%; }
-          .akrpg.sheet.actor.character .sheet-body .misc .savingThrows .savingThrow .total {
+          .akrpg.sheet.actor.character .sheet-body .attributes .misc .savingThrows .savingThrow .total {
             font-weight: 700; }
-      .akrpg.sheet.actor.character .sheet-body .misc .character-options {
+      .akrpg.sheet.actor.character .sheet-body .attributes .misc .character-options {
         display: flex;
         flex-direction: column;
         padding: 2px; }
-        .akrpg.sheet.actor.character .sheet-body .misc .character-options .signature-ability-container {
+        .akrpg.sheet.actor.character .sheet-body .attributes .misc .character-options .signature-ability-container {
           display: flex;
           flex-direction: row;
           align-items: center; }
-        .akrpg.sheet.actor.character .sheet-body .misc .character-options .bab-container {
+        .akrpg.sheet.actor.character .sheet-body .attributes .misc .character-options .bab-container, .akrpg.sheet.actor.character .sheet-body .attributes .misc .character-options .encumbrance-modifier {
           display: flex;
           align-items: center; }
-          .akrpg.sheet.actor.character .sheet-body .misc .character-options .bab-container input {
+          .akrpg.sheet.actor.character .sheet-body .attributes .misc .character-options .bab-container h6, .akrpg.sheet.actor.character .sheet-body .attributes .misc .character-options .encumbrance-modifier h6 {
+            min-width: 250px; }
+          .akrpg.sheet.actor.character .sheet-body .attributes .misc .character-options .bab-container input, .akrpg.sheet.actor.character .sheet-body .attributes .misc .character-options .encumbrance-modifier input {
             text-align: right; }
+    .akrpg.sheet.actor.character .sheet-body .inventory {
+      border-top: solid 2px #b8b7b2; }
+
+/** Colors */
+.inventory-container {
+  display: flex;
+  flex-direction: row;
+  padding: 0 4px 4px 4px; }
+  .inventory-container .items-list {
+    flex-grow: 1; }
+    .inventory-container .items-list .item-group {
+      display: flex;
+      flex-direction: column; }
+      .inventory-container .items-list .item-group .section-title {
+        display: flex;
+        flex-direction: row;
+        padding: 0 4px; }
+      .inventory-container .items-list .item-group .item {
+        border-bottom: solid 1px #cccbc8c2;
+        padding: 2px 4px;
+        display: flex;
+        flex-wrap: nowrap; }
+        .inventory-container .items-list .item-group .item .quantity {
+          margin-left: 4px;
+          color: #4b4a44; }
+    .inventory-container .items-list .icon {
+      margin-left: auto;
+      color: #4b4a44; }
+    .inventory-container .items-list .spacer {
+      width: 8px; }
 
 /** Colors */
 .akrpg.sheet.item .window-content {
@@ -209,21 +241,6 @@
       .akrpg.sheet.item .sheet-header .major-info .info .item-rarity,
       .akrpg.sheet.item .sheet-header .major-info .info .item-type {
         color: #4b4a44; }
-
-.akrpg.sheet.item .equipment-details .sidebar {
-  padding: 4px;
-  max-width: 150px;
-  border-right: solid 2px #b8b7b2; }
-  .akrpg.sheet.item .equipment-details .sidebar .sidebar-item {
-    display: flex;
-    align-items: center; }
-    .akrpg.sheet.item .equipment-details .sidebar .sidebar-item label {
-      line-height: 20px;
-      flex: 2;
-      color: #000000;
-      font-weight: bold; }
-    .akrpg.sheet.item .equipment-details .sidebar .sidebar-item input {
-      text-align: right; }
 
 .akrpg.sheet.item .equipment-details .description {
   padding: 4px; }
@@ -257,10 +274,32 @@
     font-size: 14px;
     cursor: pointer;
     flex-grow: 1; }
+  .akrpg .sidebar {
+    margin: 0 4px;
+    width: 160px;
+    max-width: 160px;
+    border-right: solid 2px #b8b7b2; }
+    .akrpg .sidebar .sidebar-item {
+      display: flex;
+      align-items: center; }
+      .akrpg .sidebar .sidebar-item label, .akrpg .sidebar .sidebar-item span {
+        line-height: 20px;
+        flex: 2;
+        color: #000000;
+        font-weight: bold; }
+      .akrpg .sidebar .sidebar-item span {
+        margin-left: auto;
+        font-weight: normal;
+        text-align: right;
+        padding-right: 2px; }
+      .akrpg .sidebar .sidebar-item input {
+        text-align: right; }
   .akrpg .sheet .editor {
     height: 100%; }
     .akrpg .sheet .editor .tox-toolbar-overlord, .akrpg .sheet .editor .tox-toolbar__primary {
       background: none; }
+  .akrpg .clickable {
+    cursor: pointer; }
   .akrpg h1,
   .akrpg h2,
   .akrpg h3,

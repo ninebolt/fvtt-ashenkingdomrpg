@@ -1,5 +1,7 @@
 import { AKRPG } from "./modules/config.js";
 
+import { preloadPartials } from './modules/partialLoader.js';
+
 import AKRPGActor from "./modules/actor/actor.js";
 import AKRPGItem from "./modules/item/item.js";
 import AKRPGActorSheetCharacter from "./modules/actor/sheets/character.js";
@@ -32,4 +34,9 @@ Hooks.once("init", async function () {
         types: ["equipment"],
         makeDefault: true,
     });
+
+    // Load HTML Partials
+    preloadPartials();
+
+    console.log('AKRPG | System Load Complete');
 });

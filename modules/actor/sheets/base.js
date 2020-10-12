@@ -61,7 +61,55 @@ export default class AKRPGActorSheet extends ActorSheet {
         html.find(".skill-name").click(this._rollSkillCheck.bind(this));
         html.find(".savingThrow-name").click(this._rollSavingThrow.bind(this));
 
+        // Create Item
+        html.find('.item-create').click(this._onItemCreate.bind(this));
+        // Edit Item
+        html.find('.item-edit').click(this._onItemEdit.bind(this));
+        // Delete Item
+        html.find(".item-delete").click(this._onItemDelete.bind(this));
+
         super.activateListeners(html);
+    }
+
+    _onItemCreate(event) {
+        event.preventDefault();
+        const header = event.currentTarget.closest('.item-group');
+        const type = header.dataset.itemType;
+
+        console.log('HEADER', header);
+        console.log('TYPE', type);
+
+        const itemData = {
+            name: "Item",
+            type: type,
+            data: duplicate(header.dataset)
+        }
+        delete itemData.data['type'];
+
+        console.log('ITEM DATA', itemData);
+        return this.actor.createOwnedItem(itemData);
+    }
+
+    /**
+     * Handles editing an item attached to the actor
+     * @param event The click event
+     */
+    _onItemEdit(event) {
+        event.preventDefault();
+        const div = event.currentTarget.closest('.item');
+        const item = this.actor.getOwnedItem(div.dataset.itemId);
+        item.sheet.render(true);
+    }
+
+    /**
+     * Handles deleting an item attached to the actor
+     * @param event The click event
+     */
+    _onItemDelete(event) {
+        event.preventDefault();
+        const div = event.currentTarget.closest('.item');
+        console.log('Deleting Item', div.dataset);
+        this.actor.deleteOwnedItem(div.dataset.itemId);
     }
 
     /**

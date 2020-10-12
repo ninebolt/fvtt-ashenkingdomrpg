@@ -50,29 +50,6 @@
 
     .equipment-details {
 
-        .sidebar {
-            padding: 4px;
-            max-width: 150px;
-
-            border-right: solid 2px $grey;
-
-            .sidebar-item {
-                display: flex;
-                align-items: center;
-
-                label {
-                   line-height: 20px;
-                   flex: 2;
-                   color: $text-dark;
-                   font-weight: bold; 
-                }
-
-                input {
-                    text-align: right;
-                }
-            }
-        }
-
         .description {
             padding: 4px; 
             .editor {

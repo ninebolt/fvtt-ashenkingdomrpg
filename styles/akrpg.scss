@@ -1,6 +1,7 @@
 @import "variables";
 @import "actor";
 @import "character";
+@import "inventory";
 @import "item";
 
 .akrpg {
@@ -35,6 +36,36 @@
         flex-grow: 1;
     }
 
+    .sidebar {
+        margin: 0 4px;
+        width: 160px;
+        max-width: 160px;
+        border-right: solid 2px $grey;
+
+       .sidebar-item {
+            display: flex;
+            align-items: center;
+
+            label, span {
+                line-height: 20px;
+                flex: 2;
+                color: $text-dark;
+                font-weight: bold; 
+            }
+
+            span {
+                margin-left: auto;
+                font-weight: normal;
+                text-align: right;
+                padding-right: 2px;
+            }
+
+            input {
+                text-align: right;
+            }
+        }
+    }
+
     // Editor Stylings
     .sheet {
         .editor {
@@ -44,6 +75,10 @@
                 background: none;
             }
         }
+    }
+
+    .clickable {
+        cursor: pointer;
     }
 
     /**
