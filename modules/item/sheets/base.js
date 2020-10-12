@@ -27,7 +27,10 @@ export default class AKRPGItemSheet extends ItemSheet {
 
     /** @override */
     getData() {
-        const data = super.getData();
+        const data = {
+          ...super.getData(),
+          config: AKRPG,
+        }
         console.log("Item Data", data);
 
         data.itemType = data.item.type.toLowerCase();
@@ -39,7 +42,7 @@ export default class AKRPGItemSheet extends ItemSheet {
      * Event Listeners
      */
     activateListeners(html) {
-        html.find(".name").click(this._rollDamage.bind(this));
+        html.find(".spell-name").click(this._rollDamage.bind(this));
 
         super.activateListeners(html);
     }

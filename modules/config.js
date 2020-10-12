@@ -63,6 +63,7 @@ AKRPG.spellDomains = {
     nature: "Nature",
     sky: "Sky",
     void: "Void",
+    life: "Life",
 };
 
 // Weapon Properties

@@ -1,11 +1,7 @@
 import { AKRPG } from "./modules/config.js";
 
-<<<<<<< HEAD
 // Actors
-=======
 import { preloadPartials } from './modules/partialLoader.js';
-
->>>>>>> 889e3a26ee0adc72cd4897cf9fda1f3ff0d1e89f
 import AKRPGActor from "./modules/actor/actor.js";
 import AKRPGActorSheetCharacter from "./modules/actor/sheets/character.js";
 import AKRPGItemSheetEquipment from "./modules/item/sheets/equipment.js";
@@ -37,6 +33,7 @@ Hooks.once("init", async function () {
         types: ["character"],
         makeDefault: true,
     });
+
     Items.unregisterSheet("core", ItemSheet);
     Items.registerSheet("akrpg", AKRPGItemSheetSpell, {
         types: ["spell"],

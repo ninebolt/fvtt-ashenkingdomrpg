@@ -1,21 +1,28 @@
 <form class="{{cssClass}}" autocomplete="off">
     {{!-- Sheet Header --}}
-    <header class="sheet-header flexrow">
-        <h1 class="name spell-name">{{item.name}}</h1>
+    <header class="sheet-header">
         <div class="flexrow">
+          <h1 class="name spell-name">{{item.name}}</h1>
+        </div>
+        <div class="flexrow spell-attributes">
           <label>Arcanum Cost - {{data.arcanumCost}}</label>
           <label>Domain - {{data.domain}}</label>
         </div>
-        <img
-            class="token"
-            src="{{item.img}}"
-            data-edit="img"
-            title="{{item.name}}"
-        />
+        <div class="flexrow spell-attributes">
+          {{#if data.concentration}}
+            <label>Concentration - {{data.concentration}}</label>
+          {{/if}}
+          {{#each data.components as |val label|}}
+            {{#if val}}
+              <label>{{label}}</label>
+            {{/if}}
+          {{/each}}
+        </div>
     </header>
+
+    {{!-- Spell Description --}}
     <section class="sheet-body">
         <div class="flexrow">
-            {{!-- Spell Description --}}
             <div id="description">{{{data.description}}}</div>
         </div>
     </section>
