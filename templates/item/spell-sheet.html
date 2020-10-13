@@ -6,7 +6,7 @@
         </div>
         <div class="flexrow spell-attributes">
           <label>Arcanum Cost - {{data.arcanumCost}}</label>
-          <label>Domain - {{data.domain}}</label>
+          <label>{{labels.spellDomain}} Domain</label>
           {{#if data.concentration}}
             <label>Concentration - {{data.concentration}}</label>
           {{/if}}
@@ -37,6 +37,9 @@
             {{#each data.damage.parts}}
                 <label>{{this}}</label>
             {{/each}}
+        {{/if}}
+        {{#if data.save.dc}}
+            <label>Save: {{labels.saveAbility}}</label>
         {{/if}}
       </div>
     </section>

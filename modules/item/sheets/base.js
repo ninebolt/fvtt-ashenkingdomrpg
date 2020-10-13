@@ -30,6 +30,7 @@ export default class AKRPGItemSheet extends ItemSheet {
         const data = {
           ...super.getData(),
           config: AKRPG,
+          labels: {},
         }
         console.log("Item Data", data);
 

@@ -66,6 +66,17 @@ AKRPG.spellDomains = {
     life: "Life",
 };
 
+AKRPG.spellDomainColors = {
+    death: "#8e8e8e",
+    glass: "#9ebdd1",
+    ice: "#2457db",
+    inferno: "#b84223",
+    nature: "#10a141",
+    sky: "#e495eb",
+    void: "#6c10a4",
+    life: "#b5ab21",
+};
+
 // Weapon Properties
 AKRPG.weaponProperties = {
     finesse: "Finesse",
