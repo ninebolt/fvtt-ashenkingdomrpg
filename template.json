@@ -178,7 +178,7 @@
                     },
                     "rel": {
                         "proficiency": "unknown",
-                        "baseAbility": "wis",
+                        "baseAbility": "int",
                         "additionalModifier": 0,
                         "value": 0,
                         "skillType": "general"
